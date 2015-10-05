@@ -3,12 +3,16 @@ echo -e "Set OsX user defaults"
 # ==============================================
 # Trackpad
 # ==============================================
-# Secondary click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
 # Tap to click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Tap with two fingers to emulate right click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool false
+# Secondary click
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+defaults write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
+defaults write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+
 
 defaults write com.apple.dock showMissionControlGestureEnabled -bool true
 defaults write com.apple.dock showAppExposeGestureEnabled -bool true
@@ -96,7 +100,8 @@ defaults write com.apple.Terminal "Startup Window Settings" -string "Pro"
 # Sound
 # ==============================================
 # Disable user interface sound efects
-defaults write com.apple.systemsound 'com.apple.sound.uiaudio.enabled' -bool false
+defaults write NSGlobalDomain "com.apple.sound.beep.feedback" -bool false
+defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -bool false
 
 # ==============================================
 # Screen Capture

@@ -22,20 +22,12 @@ from Foundation import CFPreferencesAppSynchronize
 # Standard Applications
 # =======================================
 appleApps = [
-    "/Applications/Finder.app",
     "/Applications/Launchpad.app",
     "/Applications/Mission Control.app",
     "/Applications/System Preferences.app",
-    "/Applications/Utilities/Terminal.app"
-    "/Applications/Safari.app",
-    "/Applications/Utilities/Activity Monitor.app",
+    "/Applications/Utilities/Terminal.app",
+    "/Applications/Safari.app"
     ]
-
-# =======================================
-# Standard Applications with different
-# names in different OS versions
-# =======================================
-appleAppsWithVaryingNames = [ ]
 
 # =======================================
 # Optional Applications
@@ -43,12 +35,7 @@ appleAppsWithVaryingNames = [ ]
 # =======================================
 thirdPartyApps = [
     {
-    "path": "/Applications/Intellij IDEA 14app",
-    "args": [ "--after", "System Preferences" ],
-    "forced": True
-    },
-    {
-    "path": "/Applications/PyCharm.app",
+    "path": "/Applications/VMware Fusion.app",
     "args": [ "--after", "System Preferences" ],
     "forced": True
     },
@@ -58,22 +45,17 @@ thirdPartyApps = [
     "forced": True
     },
     {
-    "path": "/Applications/VMware Fusion.app",
+    "path": "/Applications/PyCharm.app",
     "args": [ "--after", "System Preferences" ],
     "forced": True
     },
     {
-    "path": "/Applications/Opera developer.app",
-    "args": [ "--after", "Safari" ],
+    "path": "/Applications/Intellij IDEA 14app",
+    "args": [ "--after", "System Preferences" ],
     "forced": True
     },
     {
-    "path": "/Applications/Google Chrome Canary.app",
-    "args": [ "--after", "Safari" ],
-    "forced": True
-    },
-    {
-    "path": "/Applications/FirefoxDeveloperEdition.app",
+    "path": "/Applications/Spotify.app",
     "args": [ "--after", "Safari" ],
     "forced": True
     },
@@ -88,10 +70,20 @@ thirdPartyApps = [
     "forced": True
     },
     {
-    "path": "/Applications/Spotify.app",
+    "path": "/Applications/FirefoxDeveloperEdition.app",
     "args": [ "--after", "Safari" ],
     "forced": True
     },
+    {
+    "path": "/Applications/Google Chrome Canary.app",
+    "args": [ "--after", "Safari" ],
+    "forced": True
+    },
+    {
+    "path": "/Applications/Opera developer.app",
+    "args": [ "--after", "Safari" ],
+    "forced": True
+    }
     ]
 
 dockutilPath = ""
@@ -162,9 +154,9 @@ def addFolders():
             downloads = os.path.join(homePath, "Downloads")
             if os.path.exists(documents):
                 print "Adding %s" % documents
-                label = "Documents (%s)" % aDisk
+                label = "Documents"
                 args = [
-                    "--view", "grid",
+                    "--view", "fan",
                     "--display", "stack",
                     "--sort", "name",
                     "--label", label
@@ -172,9 +164,9 @@ def addFolders():
                 dockutilAdd(documents, args)
             if os.path.exists(downloads):
                 print "Adding %s" % downloads
-                label = "Downloads (%s)" % aDisk
+                label = "Downloads"
                 args = [
-                    "--view", "grid",
+                    "--view", "fan",
                     "--display", "stack",
                     "--sort", "dateadded",
                     "--label", label
@@ -208,14 +200,6 @@ def main(argv=None):
         for anApp in appleApps:
             dockutilAdd(anApp, None)
             #print "Added %s" % anApp
-
-        # Add more Apple apps
-        for anApp in appleAppsWithVaryingNames:
-            if os.path.exists(anApp["path"]):
-                dockutilAdd(anApp["path"], anApp["args"])
-                #print "Added %s" % anApp["path"]
-            else:
-                print "Skipped %s" % anApp["path"]
 
         # Add 3rd party apps
         for anApp in thirdPartyApps:

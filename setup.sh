@@ -5,9 +5,10 @@ sh install-homebrew.sh
 sh install-atom-plugins.sh
 sh install external-software.sh
 
-sh osx-system-defaults.sh
-sh osx-user-defaults.sh
+sudo sh osx-system-defaults.sh
+sudo sh osx-user-defaults.sh
 
+cp .bash_prompt ~/
 cp .bash_profile ~/
 cp .gitconfig ~/
 cp .gitignore_global ~/

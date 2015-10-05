@@ -1,8 +1,5 @@
 # .bash_profile
-# configure multi-line prompt
-PS1='
-\[\e[36;1m\]\u @ \[\e[32;1m\]\w > \[\e[0m\]
-==> '
+source .bash_prompt
 
 # History Tweaks
 HISTCONTROL=ignoredups:ignorespace
