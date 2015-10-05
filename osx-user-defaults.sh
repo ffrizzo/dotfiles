@@ -1,5 +1,4 @@
-echo
-echo "Set OsX user defaults"
+echo -e "\n Set OsX user defaults"
 
 # ==============================================
 # Trackpad
@@ -102,4 +101,16 @@ defaults write com.apple.systemsound 'com.apple.sound.uiaudio.enabled' -bool fal
 # ==============================================
 # Screen Capture
 # ==============================================
-defaults write com.apple.screencapture location $HOME/Downloads
+defaults write com.apple.screencapture location -string "$HOME/Downloads"
+
+# ==============================================
+# Time Machine
+# ==============================================
+# Prevent Time Machine from prompting to use new hard drives as backup volume
+ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+# ==============================================
+# Applications
+# ==============================================
+# Disable the “Are you sure you want to open this application?” dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false

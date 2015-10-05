@@ -1,5 +1,4 @@
-echo
-echo "Set OsX system defaults"
+echo -e "\n Set OsX system defaults"
 # ==============================================
 # Set energy preferences
 # ==============================================
@@ -7,8 +6,12 @@ IS_LAPTOP=`/usr/sbin/system_profiler SPHardwareDataType | grep "Model Identifier
 if [[ "$IS_LAPTOP" != "" ]]; then
     pmset -b sleep 20 disksleep 15 displaysleep 10 halfdim 1
     pmset -c sleep 0 disksleep 0 displaysleep 30 halfdim 1
+
+    # Menu bar: show remaining battery time (on pre-10.8); hide percentage
+    defaults write com.apple.menuextra.battery ShowPercent -string "NO"
+    defaults write com.apple.menuextra.battery ShowTime -string "YES"
 else
-    pmset sleep 0 disksleep 0 displaysleep 30 halfdim 1
+    pmset sleep 0 disksleep 0 displaysleep 15 halfdim 1
 fi
 
 # ==============================================
