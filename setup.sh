@@ -1,4 +1,4 @@
-echo -e "\n Setup OsX"
+echo "Setup OsX"
 
 sh install-cli-tools.sh
 sh install-homebrew.sh
@@ -12,8 +12,8 @@ cp .bash_profile ~/
 cp .gitconfig ~/
 cp .gitignore_global ~/
 
-echo -e "\n Software Update"
+echo "Software Update"
 softwareupdate -iva
 
-echo -e "\n Setup app's on dock"
+echo "Setup app's on dock"
 python setup-dock.py

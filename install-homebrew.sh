@@ -1,10 +1,10 @@
-echo -e "\n Instaling Homebrew"
+echo "Instaling Homebrew"
 export HOMEBREW_CASk_OPTS="--appdir=/Applications"
 
 #installl homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-echo -e "\n Instaling applications from homebrew"
+echo "Instaling applications from homebrew"
 
 #install homebrew-cask
 brew install caskroom/cask/brew-cask

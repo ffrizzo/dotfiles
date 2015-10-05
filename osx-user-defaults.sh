@@ -1,4 +1,4 @@
-echo -e "\n Set OsX user defaults"
+echo -e "Set OsX user defaults"
 
 # ==============================================
 # Trackpad

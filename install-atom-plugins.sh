@@ -1,4 +1,4 @@
-echo -e "\n Installing atom plugins"
+echo "Installing atom plugins"
 apm install autocomplete-glsl
 apm install go-oracle
 apm install go-plus
