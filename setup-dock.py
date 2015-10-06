@@ -50,7 +50,7 @@ thirdPartyApps = [
     "forced": True
     },
     {
-    "path": "/Applications/Intellij IDEA 14app",
+    "path": "/Applications/Intellij IDEA 14.app",
     "args": [ "--after", "System Preferences" ],
     "forced": True
     },
@@ -60,12 +60,12 @@ thirdPartyApps = [
     "forced": True
     },
     {
-    "path": "/Applications/Skype.app",
+    "path": "/Applications/Slack.app",
     "args": [ "--after", "Safari" ],
     "forced": True
     },
     {
-    "path": "/Applications/Slack.app",
+    "path": "/Applications/Skype.app",
     "args": [ "--after", "Safari" ],
     "forced": True
     },

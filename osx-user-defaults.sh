@@ -1,17 +1,17 @@
-echo -e "Set OsX user defaults"
+echo "\nSet OsX user defaults"
 
 # ==============================================
 # Trackpad
 # ==============================================
 # Tap to click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Tap with two fingers to emulate right click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool false
 # Secondary click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
-defaults write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
-defaults write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
 
 defaults write com.apple.dock showMissionControlGestureEnabled -bool true

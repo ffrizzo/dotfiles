@@ -1,4 +1,4 @@
-echo "Set OsX system defaults"
+echo "\nSet OsX system defaults"
 # ==============================================
 # Set energy preferences
 # ==============================================

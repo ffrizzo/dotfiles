@@ -1,4 +1,4 @@
-echo "Installing latest CLI Tools…"
+echo "\nInstalling latest CLI Tools…"
 
 cmd_line_tool_temp_file="/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress"
 touch "$cmd_line_tool_temp_file"
