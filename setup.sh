@@ -10,6 +10,7 @@ sh osx-user-defaults.sh
 
 cp .bash_prompt ~/
 cp .bash_profile ~/
+cp .inputrc ~/
 cp .gitconfig ~/
 cp .gitignore_global ~/
 

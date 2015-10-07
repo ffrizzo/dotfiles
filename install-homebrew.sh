@@ -63,6 +63,7 @@ fi
 #install homebrew completions
 brew install vagrant-completion
 brew install bash-completion
+brew install docker-completion
 
 #install homebrew docker formulas
 brew install docker
