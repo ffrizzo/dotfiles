@@ -1,5 +1,5 @@
 # .bash_profile
-source .bash_prompt
+source ~/.bash_prompt
 
 # History Tweaks
 HISTCONTROL=ignoredups:ignorespace
