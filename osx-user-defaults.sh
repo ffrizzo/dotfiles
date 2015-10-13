@@ -1,3 +1,4 @@
+#!/bin/bash 
 echo "\nSet OsX user defaults"
 
 # ==============================================
@@ -48,6 +49,11 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 # Use column view
 defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 
+# Automatically open a new Finder window when a volume is mounted
+defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool false
+defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool false
+defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool false
+
 # ==============================================
 # Dock
 # ==============================================
@@ -88,6 +94,9 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 
 # Add a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+# Prevent Safari from opening ‘safe’ files automatically after downloading
+ defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
 # ==============================================
 # Terminal

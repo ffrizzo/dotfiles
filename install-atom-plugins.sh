@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "\nInstalling atom plugins"
 apm install autocomplete-glsl
 apm install go-oracle

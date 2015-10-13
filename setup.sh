@@ -1,4 +1,5 @@
-echo "\nSetup OsX"
+#!/bin/bash 
+echo "Setup OsX"
 
 sh install-cli-tools.sh
 sh install-homebrew.sh

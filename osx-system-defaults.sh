@@ -1,3 +1,4 @@
+#!/bin/bash 
 echo "\nSet OsX system defaults"
 # ==============================================
 # Set energy preferences
@@ -8,8 +9,8 @@ if [[ "$IS_LAPTOP" != "" ]]; then
     pmset -c sleep 0 disksleep 0 displaysleep 30 halfdim 1
 
     # Menu bar: show remaining battery time (on pre-10.8); hide percentage
-    defaults write com.apple.menuextra.battery ShowPercent -string "NO"
-    defaults write com.apple.menuextra.battery ShowTime -string "YES"
+    defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+    defaults write com.apple.menuextra.battery ShowTime -string "NO"
 else
     pmset sleep 0 disksleep 0 displaysleep 15 halfdim 1
 fi
@@ -29,6 +30,12 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Set keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
+
+# ==============================================
+# Set Input preferences
+# ==============================================
+# Disable auto-correct
+ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Set scroll direction
 defaults write /Library/Preferences/.GlobalPreferences com.apple.swipescrolldirection -bool false
