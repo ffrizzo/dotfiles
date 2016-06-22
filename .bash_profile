@@ -23,11 +23,28 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWUPSTREAM=auto
 export GIT_PS1_SHOWSTASHSTATE=true
 
-export EDITOR='open -a /Applications/Atom.app'
+export EDITOR='open -a Atom.app'
+
+export NVM_DIR=$HOME/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+export PYENV_ROOT=/usr/local/var/pyenv
+eval "$(pyenv virtualenv-init -)"
+
+export GOPATH=$HOME/Documents/workspaces/go/
+export PATH=$PATH:$GOPATH/bin
 
 #alias
 alias ll='ls -la'
-alias cd..='cd ..'
-alias home='cd ~'
+alias ls='ls -a'
+
+alias workspace='cd ~/Documents/workspaces'
 
 alias gitf=git-flow
+alias gcma=git commit -am
+alias ga=git add .
+alias gp=git push
+alias gr=git rebase
+
+# Run source on bash_completion at the end of file to make sure process all alias
+source .bash_completion

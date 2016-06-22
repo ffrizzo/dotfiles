@@ -1,12 +1,13 @@
 #!/bin/bash
-echo "\nInstaling Homebrew"
+echo "Instaling Homebrew"
+echo ""
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 #installl homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-echo "\nInstaling applications from homebrew"
-
+echo "Instaling applications from homebrew"
+echo ""
 #install homebrew-cask
 brew install caskroom/cask/brew-cask
 
@@ -17,8 +18,10 @@ brew tap homebrew/completions
 #install hombrew formulas
 brew install dos2unix
 brew install git
+brew install git-credential-manager
 brew install mercurial
 brew install wget
+brew install nvm
 
 # brew install dockutil
 brew install https://github.com/keith/homebrew/raw/ks-dockutil/Library/Formula/dockutil.rb
@@ -29,9 +32,11 @@ brew cask install dropbox
 brew cask install google-drive
 
 brew cask install google-chrome-canary
+brew cask install firefox
 brew cask install firefoxdeveloperedition
 brew cask install opera-developer
 
+brew cask install adobe-reader
 brew cask install google-hangouts
 brew cask install spotify
 brew cask install the-unarchiver
@@ -45,14 +50,18 @@ brew cask install virtualbox
 brew cask install vmware-fusion
 brew cask install vagrant
 
+brew cask install arduino
 brew cask install atom
 brew cask install intellij-idea
 brew cask install pycharm
+brew cask install postamn
 
 brew cask install sourcetree
 brew cask install diffmerge
 
+brew cask install mongochef
 brew cask install pgadmin3
+brew cask install mysqlworkbench
 
 IS_LAPTOP=`/usr/sbin/system_profiler SPHardwareDataType | grep "Model Identifier" | grep "Book"`
 if [[ "$IS_LAPTOP" != "" ]]; then
@@ -64,13 +73,11 @@ fi
 #install homebrew completions
 brew install vagrant-completion
 brew install bash-completion
-brew install docker-completion
 
 #install homebrew docker formulas
 brew install docker
-brew install docker-machine
+brew install docker-completion
 brew install docker-compose
-brew install docker-swarm
-
-#install homebrew automation tools formulas
-brew install ansible
+brew install docker-compose-completion
+brew install docker-machine
+brew install docker-machine-completion

@@ -1,19 +1,21 @@
-#!/bin/bash 
+#!/bin/bash
 echo "\nSet OsX user defaults"
 
 # ==============================================
 # Trackpad
 # ==============================================
 # Tap to click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-# Tap with two fingers to emulate right click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool false
-# Secondary click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
-
+IS_LAPTOP=`/usr/sbin/system_profiler SPHardwareDataType | grep "Model Identifier" | grep "Book"`
+if [[ "$IS_LAPTOP" != "" ]]; then
+  defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+  defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+  # Tap with two fingers to emulate right click
+  defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool false
+  # Secondary click
+  defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+  defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
+  defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+fi
 
 defaults write com.apple.dock showMissionControlGestureEnabled -bool true
 defaults write com.apple.dock showAppExposeGestureEnabled -bool true
@@ -24,10 +26,10 @@ defaults write com.apple.dock showLaunchpadGestureEnabled -bool true
 # Archive Utility
 # ==============================================
 # Move archives to trash after extraction
-defaults write com.apple.archiveutility "dearchive-move-after" -string "~/.Trash"
+# defaults write com.apple.archiveutility "dearchive-move-after" -string "~/.Trash"
 
 # Don't reveal extracted items
-defaults write com.apple.archiveutility "dearchive-reveal-after" -bool false
+# defaults write com.apple.archiveutility "dearchive-reveal-after" -bool false
 
 # ==============================================
 # Finder
@@ -44,6 +46,8 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # Show all files
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
+# Finder: allow text selection in Quick Look
+defaults write com.apple.finder QLEnableTextSelection -bool true
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 # Use column view
@@ -52,7 +56,7 @@ defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 # Automatically open a new Finder window when a volume is mounted
 defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool false
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool false
-defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool false
+defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 # ==============================================
 # Dock
@@ -104,6 +108,10 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 # Set the "Pro" as the default
 defaults write com.apple.Terminal "Default Window Settings" -string "Pro"
 defaults write com.apple.Terminal "Startup Window Settings" -string "Pro"
+
+pathToTerminalPrefs="${HOME}/Library/Preferences/com.apple.Terminal.plist"
+/usr/libexec/PlistBuddy -c "Add :Window\ Settings:Pro:columnCount integer 120" ${pathToTerminalPrefs}
+/usr/libexec/PlistBuddy -c "Add :Window\ Settings:Pro:rowCount integer 70" ${pathToTerminalPrefs}
 
 # ==============================================
 # Sound
