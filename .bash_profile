@@ -35,12 +35,11 @@ export GOPATH=$HOME/Documents/workspaces/go/
 export PATH=$PATH:$GOPATH/bin
 
 #alias
-alias ll='ls -la'
+alias ll='ls -lha'
 alias ls='ls -a'
 
 alias workspace='cd ~/Documents/workspaces'
 
-alias gitf=git-flow
 alias gcma=git commit -am
 alias ga=git add .
 alias gp=git push
