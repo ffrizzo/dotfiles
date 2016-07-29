@@ -21,7 +21,7 @@ echo "Software Update"
 softwareupdate -iva
 
 echo ""
-echo "Setup app's on dock"
+echo "Setup apps on dock"
 python setup-dock.py
 
 mkdir ~/.atom
