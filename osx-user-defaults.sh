@@ -66,7 +66,7 @@ defaults write com.apple.dock showAppExposeGesture -bool true
 defaults write com.apple.dock magnification -bool true
 defaults write com.apple.dock tilesize -int 29
 defaults write com.apple.dock minimize-to-application -bool true
-
+defaults write com.apple.dock autohide 1
 # ==============================================
 # Safari & WebKit
 # ==============================================
