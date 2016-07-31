@@ -1,5 +1,5 @@
 # .bash_profile
-source ~/.bash_prompt
+source .bash_prompt
 
 # History Tweaks
 HISTCONTROL=ignoredups:ignorespace
@@ -40,10 +40,10 @@ alias ls='ls -a'
 
 alias workspace='cd ~/Documents/workspaces'
 
-alias gcma=git commit -am
-alias ga=git add .
-alias gp=git push
-alias gr=git rebase
+alias gcma='git commit -am'
+alias ga='git add .'
+alias gp='git push'
+alias gr='git rebase'
 
 # Run source on bash_completion at the end of file to make sure process all alias
 source .bash_completion

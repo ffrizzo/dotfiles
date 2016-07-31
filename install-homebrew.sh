@@ -22,6 +22,9 @@ brew install git-credential-manager
 brew install mercurial
 brew install wget
 brew install nvm
+brew install go
+brew install pyenv
+brew install pyenv-virtualenv
 
 # brew install dockutil
 brew install https://github.com/keith/homebrew/raw/ks-dockutil/Library/Formula/dockutil.rb

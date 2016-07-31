@@ -35,11 +35,6 @@ appleApps = [
 # =======================================
 thirdPartyApps = [
     {
-    "path": "/Applications/VMware Fusion.app",
-    "args": [ "--after", "System Preferences" ],
-    "forced": True
-    },
-    {
     "path": "/Applications/Atom.app",
     "args": [ "--after", "System Preferences" ],
     "forced": True
@@ -50,7 +45,7 @@ thirdPartyApps = [
     "forced": True
     },
     {
-    "path": "/Applications/Intellij IDEA 14.app",
+    "path": "/Applications/Intellij IDEA.app",
     "args": [ "--after", "System Preferences" ],
     "forced": True
     },
