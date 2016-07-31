@@ -81,3 +81,8 @@ brew install docker-machine-completion
 brew install docker
 brew install docker-compose
 brew install docker-machine
+
+echo ""
+echo "Cleanup brew"
+brew cleanup
+brew cask cleanup

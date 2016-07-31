@@ -32,6 +32,6 @@ apm install react
 apm install redux-snippets
 
 apm install color-picker
-apm install tab-number
+apm install tab-numbers
 apm install file-icons
 apm install highlight-line
