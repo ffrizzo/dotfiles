@@ -1,5 +1,6 @@
 #!/bin/bash
-echo "\nSet OsX user defaults"
+echo ""
+echo "Set OsX user defaults"
 
 # ==============================================
 # Trackpad

@@ -1,5 +1,6 @@
 #!/bin/bash
-echo "\nInstalling atom plugins"
+echo ""
+echo "Installing atom plugins"
 
 apm install environment
 apm install linter

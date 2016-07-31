@@ -1,4 +1,5 @@
 #!/bin/bash
+echo ""
 echo "Setup OsX"
 
 sh install-cli-tools.sh

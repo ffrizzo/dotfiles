@@ -1,5 +1,6 @@
-#!/bin/bash 
-echo "\nSet OsX system defaults"
+#!/bin/bash
+echo ""
+echo "Set OsX system defaults"
 # ==============================================
 # Set energy preferences
 # ==============================================
