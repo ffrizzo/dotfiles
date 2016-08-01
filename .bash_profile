@@ -1,5 +1,5 @@
 # .bash_profile
-source .bash_prompt
+source $HOME/.bash_prompt
 
 # History Tweaks
 HISTCONTROL=ignoredups:ignorespace
@@ -46,4 +46,4 @@ alias gp='git push'
 alias gr='git rebase'
 
 # Run source on bash_completion at the end of file to make sure process all alias
-source .bash_completion
+source $HOME/.bash_completion
