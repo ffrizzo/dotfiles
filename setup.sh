@@ -7,6 +7,9 @@ sh install-homebrew.sh
 sh install-atom-plugins.sh
 sh install-external-software.sh
 
+sh update-permission.sh
+sh symlinks.sh
+
 sudo sh osx-system-defaults.sh
 sh osx-user-defaults.sh
 

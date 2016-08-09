@@ -50,7 +50,7 @@ brew cask install slack
 brew cask install java
 
 brew cask install virtualbox
-brew cask install vmware-fusion
+# brew cask install vmware-fusion
 brew cask install vagrant
 
 brew cask install arduino
@@ -74,18 +74,25 @@ else
 fi
 
 #install homebrew completions
-brew install vagrant-completion
 brew install bash-completion
+brew install vagrant-completion
 
-#install homebrew docker formulas
-brew install docker-completion
-brew install docker-compose-completion
-brew install docker-machine-completion
-brew install docker
-brew install docker-compose
-brew install docker-machine
+if [[ "$IS_LAPTOP" != "" ]]; then
+  #install docker mac app
+  brew cask install docker
+  #install docker-machine xhyve driver
+  brew install docker-machine-driver-xhyve --ignore-dependencies
+else
+  #install homebrew docker formulas
+  brew install docker-completion
+  brew install docker-compose-completion
+  brew install docker-machine-completion
+  brew install docker
+  brew install docker-compose
+  brew install docker-machine
+fi
 
 echo ""
-echo "Cleanup brew"
+echo "Cleanup brew formulas"
 brew cleanup
 brew cask cleanup
