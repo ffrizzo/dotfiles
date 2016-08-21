@@ -5,7 +5,7 @@ echo "Setup OsX"
 sh install-cli-tools.sh
 sh install-homebrew.sh
 sh install-atom-plugins.sh
-sh install-external-software.sh
+sh install-external-softwares.sh
 
 sh update-permission.sh
 sh symlinks.sh
