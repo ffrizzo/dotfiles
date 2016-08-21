@@ -18,7 +18,6 @@ brew tap homebrew/completions
 #install hombrew formulas
 brew install dos2unix
 brew install git
-brew install git-credential-manager
 brew install mercurial
 brew install wget
 brew install nvm
@@ -48,6 +47,7 @@ brew cask install skype
 brew cask install slack
 
 brew cask install java
+brew install git-credential-manager
 
 brew cask install virtualbox
 # brew cask install vmware-fusion
