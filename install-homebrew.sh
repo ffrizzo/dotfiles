@@ -77,20 +77,10 @@ fi
 brew install bash-completion
 brew install vagrant-completion
 
-if [[ "$IS_LAPTOP" != "" ]]; then
-  #install docker mac app
-  brew cask install docker
-  #install docker-machine xhyve driver
-  brew install docker-machine-driver-xhyve --ignore-dependencies
-else
-  #install homebrew docker formulas
-  brew install docker-completion
-  brew install docker-compose-completion
-  brew install docker-machine-completion
-  brew install docker
-  brew install docker-compose
-  brew install docker-machine
-fi
+#install docker mac app
+brew cask install docker
+#install docker-machine xhyve driver
+brew install docker-machine-driver-xhyve --ignore-dependencies
 
 echo ""
 echo "Cleanup brew formulas"
