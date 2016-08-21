@@ -57,7 +57,6 @@ brew cask install arduino
 brew cask install atom
 brew cask install intellij-idea
 brew cask install pycharm
-brew cask install postamn
 
 brew cask install sourcetree
 brew cask install diffmerge
