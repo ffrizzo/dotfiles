@@ -26,7 +26,7 @@ brew install pyenv
 brew install pyenv-virtualenv
 
 # brew install dockutil
-brew install https://github.com/keith/homebrew/raw/ks-dockutil/Library/Formula/dockutil.rb
+brew install dockutil
 
 #install hombrew cask formulas
 brew cask install utorrent
