@@ -27,6 +27,7 @@ softwareupdate -iva
 echo ""
 echo "Setup apps on dock"
 python setup-dock.py
+killall Dock
 
 mkdir -p ~/.atom
 cp config.cson ~/.atom
