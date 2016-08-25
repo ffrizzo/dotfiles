@@ -79,7 +79,7 @@ brew install vagrant-completion
 #install docker mac app
 brew cask install docker
 #install docker-machine xhyve driver
-brew install docker-machine-driver-xhyve --ignore-dependencies
+brew install docker-machine-driver-xhyve
 
 echo ""
 echo "Cleanup brew formulas"
