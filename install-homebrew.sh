@@ -34,7 +34,7 @@ brew cask install dropbox
 brew cask install google-drive
 
 brew cask install google-chrome-canary
-brew cask install firefox
+# brew cask install firefox
 brew cask install firefoxdeveloperedition
 brew cask install opera-developer
 
@@ -45,6 +45,7 @@ brew cask install the-unarchiver
 brew cask install vlc
 brew cask install skype
 brew cask install slack
+brew cask install harvest
 
 brew cask install java
 brew install git-credential-manager
@@ -55,8 +56,9 @@ brew cask install vagrant
 
 brew cask install arduino
 brew cask install atom
-brew cask install intellij-idea
-brew cask install pycharm
+brew cask install intellij-idea-ce
+brew cask install pycharm-ce
+brew cask install visual-studio-code
 
 brew cask install sourcetree
 brew cask install diffmerge
