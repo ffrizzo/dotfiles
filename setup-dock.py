@@ -38,12 +38,12 @@ thirdPartyApps = [
     "forced": True
     },
     {
-    "path": "/Applications/PyCharm.app",
+    "path": "/Applications/PyCharm CE.app",
     "args": [ "--after", "System Preferences" ],
     "forced": True
     },
     {
-    "path": "/Applications/Intellij IDEA.app",
+    "path": "/Applications/Intellij IDEA CE.app",
     "args": [ "--after", "System Preferences" ],
     "forced": True
     },
