@@ -33,6 +33,11 @@ appleApps = [
 # =======================================
 thirdPartyApps = [
     {
+    "path": "/Applications/Visual Studio Code.app",
+    "args": [ "--after", "System Preferences" ],
+    "forced": True
+    },
+    {
     "path": "/Applications/Atom.app",
     "args": [ "--after", "System Preferences" ],
     "forced": True
