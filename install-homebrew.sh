@@ -25,7 +25,12 @@ brew install go
 brew install pyenv
 brew install pyenv-virtualenv
 
-# brew install dockutil
+brew install awscli
+brew install heroku
+brew install terraform
+brew install ansible
+brew install tree
+
 brew install dockutil
 
 #install hombrew cask formulas
@@ -44,8 +49,9 @@ brew cask install spotify
 brew cask install the-unarchiver
 brew cask install vlc
 brew cask install skype
-brew cask install slack
+brew cask install slack-beta
 brew cask install harvest
+brew cask install vnc-viewer
 
 brew cask install java
 brew install git-credential-manager
@@ -63,8 +69,8 @@ brew cask install visual-studio-code
 brew cask install sourcetree
 brew cask install diffmerge
 
-brew cask install mongochef
-brew cask install pgadmin3
+brew cask install studio-3t
+brew cask install pgadmin4
 brew cask install mysqlworkbench
 
 IS_LAPTOP=`/usr/sbin/system_profiler SPHardwareDataType | grep "Model Identifier" | grep "Book"`
@@ -72,6 +78,8 @@ if [[ "$IS_LAPTOP" != "" ]]; then
   brew cask install chronoagent
 else
   brew cask install chronosync
+  brew cask install logitech-gaming-software
+  brew cask install steelseries-engine
 fi
 
 #install homebrew completions

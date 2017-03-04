@@ -45,5 +45,8 @@ alias ga='git add .'
 alias gp='git push'
 alias gr='git rebase'
 
+alias st='open -a SourceTree'
+alias vscode='code'
+
 # Run source on bash_completion at the end of file to make sure process all alias
 source $HOME/.bash_completion
