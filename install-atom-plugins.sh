@@ -8,7 +8,9 @@ apm install linter
 apm install autocomplete-go
 apm install builder-go
 apm install go-oracle
+apm install go-debug
 apm install go-plus
+apm install go-signature-statusbar
 apm install gometalinter-linter
 apm install navigator-godef
 
@@ -29,3 +31,4 @@ apm install color-picker
 apm install tab-numbers
 apm install file-icons
 apm install highlight-line
+apm install hyperclick
