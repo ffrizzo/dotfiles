@@ -8,3 +8,4 @@ code --install-extension donjayamanne.python
 code --install-extension lukehoban.Go
 code --install-extension robertohuertasm.vscode-icons
 code --install-extension xabikos.ReactSnippets
+code --install-extension mauve.terraform

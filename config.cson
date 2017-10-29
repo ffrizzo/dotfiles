@@ -5,6 +5,13 @@
   autosave:
     enabled: true
   core:
+    customFileTypes:
+      "source.shell": [
+        "tf"
+      ]
+      "source.yaml": [
+        "yaml.tpl"
+      ]
     disabledPackages: [
       "welcome"
       "symbols-view"
@@ -17,24 +24,34 @@
     excludeVcsIgnoredPaths: false
   dyndocker: {}
   editor:
-    fontSize: 13
     invisibles: {}
     tabType: "soft"
   "exception-reporting":
     userId: "beca608e-8581-bdfe-3bde-a1a9bd166fed"
   "file-icons": {}
   "go-oracle": {}
-  "go-plus": {}
+  "go-plus":
+    autocomplete:
+      suppressBuiltinAutocompleteProvider: false
+    panel:
+      displayMode: "closed"
+      focusOnFailure: false
+    panelDisplayMode: "closed"
+    test:
+      focusPanelIfTestsFail: false
   "go-rename": {}
   "gometalinter-linter": {}
   "highlight-line":
     enableSelectionBorder: true
     hideHighlightOnSelect: true
     underline: "dashed"
-  linter:
-    errorPanelHeight: 71
-    gutterPosition: "Left"
-    underlineIssues: false
+  linter: {}
+  "linter-ui-default":
+    hidePanelWhenEmpty: true
+    panelHeight: 136.5
+    panelRepresents: "Entire Project"
+    statusBarClickBehavior: "Toggle Status Bar Scope"
+  "one-dark-ui": {}
   react: {}
   tabs:
     addNewTabsAtEnd: true

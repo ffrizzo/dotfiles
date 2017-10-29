@@ -34,6 +34,8 @@ eval "$(pyenv virtualenv-init -)"
 export GOPATH=$HOME/Documents/workspaces/go/
 export PATH=$PATH:$GOPATH/bin
 
+export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+
 #alias
 alias ll='ls -lha'
 alias ls='ls -a'

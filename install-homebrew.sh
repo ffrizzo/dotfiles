@@ -26,6 +26,7 @@ brew install pyenv
 brew install pyenv-virtualenv
 
 brew install awscli
+brew install awslogs
 brew install heroku
 brew install terraform
 brew install ansible
@@ -35,13 +36,14 @@ brew install dockutil
 
 #install hombrew cask formulas
 brew cask install utorrent
-brew cask install dropbox
+# brew cask install dropbox
 brew cask install google-drive
 
 brew cask install google-chrome-canary
 # brew cask install firefox
 brew cask install firefoxdeveloperedition
 brew cask install opera-developer
+brew cask install torbrowser
 
 brew cask install adobe-reader
 brew cask install google-hangouts
@@ -50,6 +52,7 @@ brew cask install the-unarchiver
 brew cask install vlc
 brew cask install skype
 brew cask install slack-beta
+brew cask install keybase
 brew cask install harvest
 brew cask install vnc-viewer
 
@@ -60,18 +63,22 @@ brew cask install virtualbox
 # brew cask install vmware-fusion
 brew cask install vagrant
 
+brew cask install shiftit
+brew cask install iterm2
+
 brew cask install arduino
 brew cask install atom
 brew cask install intellij-idea-ce
 brew cask install pycharm-ce
 brew cask install visual-studio-code
+brew cask install paw
 
 brew cask install sourcetree
 brew cask install diffmerge
 
 brew cask install studio-3t
 brew cask install pgadmin4
-brew cask install mysqlworkbench
+# brew cask install mysqlworkbench
 
 IS_LAPTOP=`/usr/sbin/system_profiler SPHardwareDataType | grep "Model Identifier" | grep "Book"`
 if [[ "$IS_LAPTOP" != "" ]]; then

@@ -5,8 +5,6 @@ echo "Installing atom plugins"
 apm install environment
 apm install linter
 
-apm install autocomplete-go
-apm install builder-go
 apm install go-oracle
 apm install go-debug
 apm install go-plus
@@ -19,13 +17,15 @@ apm install language-docker
 apm install language-protobuf
 apm install language-javascript-jsx
 
+apm install language-terraform
+apm install linter-terraform-syntax
+
 apm install markdown-preview-plus
 apm install markdown-writer
 
 apm install mathjax-wrapper
 
 apm install es6-javascript
-apm install angularjs
 
 apm install color-picker
 apm install tab-numbers
