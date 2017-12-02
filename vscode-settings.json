@@ -1,0 +1,13 @@
+{
+    "workbench.activityBar.visible": true,
+    "files.autoSave": "onFocusChange",
+    "vsicons.dontShowNewVersionMessage": true,
+    "terraform.formatVarsOnSave": false,
+    "terraform.formatOnSave": false,
+    "atomKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.formatOnPaste": true,
+    "files.associations": {
+        "Dockerfile*": "dockerfile"
+    }
+}

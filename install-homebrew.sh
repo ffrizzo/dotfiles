@@ -20,7 +20,6 @@ brew install dos2unix
 brew install git
 brew install mercurial
 brew install wget
-brew install nvm
 brew install go
 brew install pyenv
 brew install pyenv-virtualenv
@@ -29,15 +28,14 @@ brew install awscli
 brew install awslogs
 brew install heroku
 brew install terraform
+brew install packer
 brew install ansible
 brew install tree
 
 brew install dockutil
 
-#install hombrew cask formulas
-brew cask install utorrent
 # brew cask install dropbox
-brew cask install google-drive
+brew cask install google-backup-and-sync
 
 brew cask install google-chrome-canary
 # brew cask install firefox
@@ -54,7 +52,6 @@ brew cask install skype
 brew cask install slack-beta
 brew cask install keybase
 brew cask install harvest
-brew cask install vnc-viewer
 
 brew cask install java
 brew install git-credential-manager

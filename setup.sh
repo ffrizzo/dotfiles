@@ -34,3 +34,5 @@ killall Dock
 mkdir -p ~/.atom
 cp config.cson ~/.atom
 cp snippets.cson ~/.atom
+
+cp vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json
