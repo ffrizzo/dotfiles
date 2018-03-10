@@ -11,7 +11,6 @@ softwareupdate -ia --verbose
 sh install-homebrew.sh
 sh install-atom-plugins.sh
 sh install-vscode-plugins.sh
-sh install-external-softwares.sh
 
 sh update-permission.sh
 sh symlinks.sh

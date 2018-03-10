@@ -31,6 +31,8 @@ brew install terraform
 brew install packer
 brew install ansible
 brew install tree
+brew install travis
+brew install wercker-cli
 
 brew install dockutil
 
@@ -39,11 +41,11 @@ brew cask install google-backup-and-sync
 
 brew cask install google-chrome-canary
 # brew cask install firefox
-brew cask install firefoxdeveloperedition
+brew cask install firefox-developer-edition
 brew cask install opera-developer
 brew cask install torbrowser
 
-brew cask install adobe-reader
+brew cask install adobe-acrobat-reader
 brew cask install google-hangouts
 brew cask install spotify
 brew cask install the-unarchiver

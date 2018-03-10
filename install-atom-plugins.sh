@@ -9,8 +9,6 @@ apm install go-oracle
 apm install go-debug
 apm install go-plus
 apm install go-signature-statusbar
-apm install gometalinter-linter
-apm install navigator-godef
 
 apm install language-babel
 apm install language-docker
