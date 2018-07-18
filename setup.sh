@@ -9,7 +9,7 @@ echo "Software Update"
 softwareupdate -ia --verbose
 
 sh install-homebrew.sh
-sh install-atom-plugins.sh
+# sh install-atom-plugins.sh
 sh install-vscode-plugins.sh
 
 sh update-permission.sh
@@ -30,8 +30,8 @@ echo "Setup apps on dock"
 python setup-dock.py
 killall Dock
 
-mkdir -p ~/.atom
-cp config.cson ~/.atom
-cp snippets.cson ~/.atom
+# mkdir -p ~/.atom
+# cp config.cson ~/.atom
+# cp snippets.cson ~/.atom
 
 cp vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json

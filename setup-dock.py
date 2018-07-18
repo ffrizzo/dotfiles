@@ -38,16 +38,6 @@ thirdPartyApps = [
     "forced": True
     },
     {
-    "path": "/Applications/Atom.app",
-    "args": [ "--after", "System Preferences" ],
-    "forced": True
-    },
-    {
-    "path": "/Applications/PyCharm CE.app",
-    "args": [ "--after", "System Preferences" ],
-    "forced": True
-    },
-    {
     "path": "/Applications/Intellij IDEA CE.app",
     "args": [ "--after", "System Preferences" ],
     "forced": True

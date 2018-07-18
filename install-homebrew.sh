@@ -14,6 +14,7 @@ echo "Instaling applications from homebrew"
 #tap hombrew cask-versions and completions
 brew tap caskroom/versions
 brew tap homebrew/completions
+brew tap TylerBrock/saw
 
 #install hombrew formulas
 brew install dos2unix
@@ -25,14 +26,13 @@ brew install pyenv
 brew install pyenv-virtualenv
 
 brew install awscli
-brew install awslogs
-brew install heroku
+brew install saw
+# brew install heroku
 brew install terraform
 brew install packer
 brew install ansible
 brew install tree
 brew install travis
-brew install wercker-cli
 
 brew install dockutil
 
@@ -64,9 +64,10 @@ brew cask install vagrant
 
 brew cask install shiftit
 brew cask install iterm2
+brew cask install wercker-cli
 
 brew cask install arduino
-brew cask install atom
+# brew cask install atom
 brew cask install intellij-idea-ce
 brew cask install pycharm-ce
 brew cask install visual-studio-code
