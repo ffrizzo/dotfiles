@@ -17,13 +17,16 @@ brew tap homebrew/completions
 brew tap TylerBrock/saw
 
 #install hombrew formulas
+brew install fd
 brew install dos2unix
 brew install git
 brew install mercurial
 brew install wget
 brew install go
+brew install dep
 brew install pyenv
 brew install pyenv-virtualenv
+brew install httpie
 
 brew install awscli
 brew install saw
@@ -34,6 +37,7 @@ brew install ansible
 brew install tree
 brew install travis
 
+brew install mas
 brew install dockutil
 
 # brew cask install dropbox
@@ -69,7 +73,7 @@ brew cask install wercker-cli
 brew cask install arduino
 # brew cask install atom
 brew cask install intellij-idea-ce
-brew cask install pycharm-ce
+# brew cask install pycharm-ce
 brew cask install visual-studio-code
 brew cask install paw
 
@@ -96,7 +100,7 @@ brew install vagrant-completion
 #install docker mac app
 brew cask install docker
 #install docker-machine xhyve driver
-brew install docker-machine-driver-xhyve
+# brew install docker-machine-driver-xhyve
 
 echo ""
 echo "Cleanup brew formulas"
