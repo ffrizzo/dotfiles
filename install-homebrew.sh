@@ -12,8 +12,8 @@ echo "Instaling applications from homebrew"
 # brew install caskroom/cask/brew-cask
 
 #tap hombrew cask-versions and completions
+brew tap homebrew/cask-drivers
 brew tap caskroom/versions
-brew tap homebrew/completions
 brew tap TylerBrock/saw
 
 #install hombrew formulas
@@ -105,4 +105,3 @@ brew cask install docker
 echo ""
 echo "Cleanup brew formulas"
 brew cleanup
-brew cask cleanup
