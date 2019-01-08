@@ -23,7 +23,7 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWUPSTREAM=auto
 export GIT_PS1_SHOWSTASHSTATE=true
 
-export EDITOR='open -a Atom.app'
+export EDITOR='code'
 
 export PYENV_ROOT=/usr/local/var/pyenv
 eval "$(pyenv virtualenv-init -)"
