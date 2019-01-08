@@ -1,5 +1,3 @@
-#!/bin/bash
-
 prompt_git() {
 	local s='';
 	local branchName='';

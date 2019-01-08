@@ -26,6 +26,8 @@ cp .inputrc ~/
 cp .gitconfig ~/
 cp .gitignore_global ~/
 
+cp -r .git-hooks ~/
+
 echo ""
 echo "Setup apps on dock"
 python setup-dock.py

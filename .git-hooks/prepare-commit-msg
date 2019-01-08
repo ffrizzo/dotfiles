@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Comment this line if you want to always concatenate the branch name when it is missing.
+# This line will avoid the rebase message changes that is a little annoying.
+if [ -n "$COMMIT_MSG_FILE" ];then return; fi 
+
+# Include any branches for which you wish to disable this script
+if [ -z "$BRANCHES_TO_SKIP" ]; then
+  BRANCHES_TO_SKIP=(master develop staging test)
+fi
+
+COMMIT_MSG_FILE=$1
+BRANCH_NAME=$(git symbolic-ref --short HEAD | sed 's/\(.*-[0-9][0-9]*\).*/\1/')
+BRANCH_NAME="${BRANCH_NAME##*/}"
+
+BRANCH_EXCLUDED=$(printf "%s\n" "${BRANCHES_TO_SKIP[@]}" | grep -c "^$BRANCH_NAME$")
+
+if [ -n "$BRANCH_NAME" ] &&
+   [ $(head -1 ${COMMIT_MSG_FILE}|grep -c "${BRANCH_NAME}" ) = 0 ] &&
+   ! [[ $BRANCH_EXCLUDED -eq 1 ]]; then
+  sed -i.bak -e "1s/^/[${BRANCH_NAME}] /" ${COMMIT_MSG_FILE}
+fi

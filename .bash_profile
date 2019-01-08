@@ -25,9 +25,6 @@ export GIT_PS1_SHOWSTASHSTATE=true
 
 export EDITOR='open -a Atom.app'
 
-export NVM_DIR=$HOME/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
 export PYENV_ROOT=/usr/local/var/pyenv
 eval "$(pyenv virtualenv-init -)"
 
@@ -52,3 +49,4 @@ alias vscode='code'
 
 # Run source on bash_completion at the end of file to make sure process all alias
 source $HOME/.bash_completion
+complete -c /usr/loca/bin/terraform terrform

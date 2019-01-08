@@ -5,14 +5,15 @@
 	helper = osxkeychain
 [color]
 	diff = auto
-  status = auto
-  branch = auto
-  interactive = auto
+	status = auto
+	branch = auto
+	interactive = auto
 [merge]
 	summary = true
 [core]
 	excludesfile = $HOME/.gitignore_global
-	editor = open -a Atom
+	hooksPath = $HOME/.git-hooks/
+	editor = code -n -w
 [push]
 	default = current
 [alias]
@@ -25,3 +26,14 @@
 	ci=commit -a -v -m
 	pu=push
 	pl=pull
+[commit]
+	# https://help.github.com/articles/signing-commits-using-gpg/
+	gpgsign = false
+[diff]
+	renames = copies	
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true	
