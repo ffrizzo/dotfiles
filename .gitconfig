@@ -11,8 +11,8 @@
 [merge]
 	summary = true
 [core]
-	excludesfile = $HOME/.gitignore_global
-	hooksPath = $HOME/.git-hooks/
+	excludesfile = ~/.gitignore_global
+	hooksPath = ~/.git-hooks
 	editor = code -n -w
 [push]
 	default = current

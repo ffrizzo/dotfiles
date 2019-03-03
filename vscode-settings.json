@@ -41,5 +41,10 @@
             ".tfvars"
         ],
         "formatOnSave": true
+    },
+    "diffEditor.ignoreTrimEhiteSpace": true,
+    "breadcrumbs.enabled": true,
+    "files.exclude": {
+        "**/.git": true
     }
 }
