@@ -3,6 +3,7 @@ echo ""
 echo "Installing vscode plugins"
 
 code --install-extension bbenoist.vagrant
+code --install-extension bungcip.better-toml
 code --install-extension donjayamanne.githistory
 code --install-extension eamodio.gitlens
 code --install-extension juanblanco.solidity
