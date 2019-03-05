@@ -46,5 +46,7 @@
     "breadcrumbs.enabled": true,
     "files.exclude": {
         "**/.git": true
-    }
+    },
+    "workbench.iconTheme": "vscode-icons",
+    "python.jediEnabled": false
 }

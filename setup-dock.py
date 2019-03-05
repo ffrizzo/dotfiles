@@ -43,6 +43,11 @@ thirdPartyApps = [
     "forced": True
     },
     {
+    "path": "/Applications/iTerm.app",
+    "args": [ "--after", "System Preferences" ],
+    "forced": True
+    },    
+    {
     "path": "/Applications/Spotify.app",
     "args": [ "--after", "Safari" ],
     "forced": True
@@ -58,7 +63,7 @@ thirdPartyApps = [
     "forced": True
     },
     {
-    "path": "/Applications/FirefoxDeveloperEdition.app",
+    "path": "/Applications/Firefox Developer Edition.app",
     "args": [ "--after", "Safari" ],
     "forced": True
     },
@@ -114,7 +119,7 @@ def localDisks():
     p = subprocess.Popen(diskutilProcess, bufsize=1, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     (output, err) = p.communicate()
     if output != "":
-        outputPlist = plistlib.readPlistFromBytes(output)
+        outputPlist = plistlib.readPlistFromString(output)
         return outputPlist['VolumesFromDisks']
     else:
         return None
@@ -141,7 +146,7 @@ def addFolders():
             documents = os.path.join(homePath, "Documents")
             downloads = os.path.join(homePath, "Downloads")
             if os.path.exists(documents):
-                print("Adding %s" % documents)
+                print "Adding %s" % documents
                 label = "Documents"
                 args = [
                     "--view", "fan",
@@ -151,7 +156,7 @@ def addFolders():
                     ]
                 dockutilAdd(documents, args)
             if os.path.exists(downloads):
-                print("Adding %s" % downloads)
+                print "Adding %s" % downloads
                 label = "Downloads"
                 args = [
                     "--view", "fan",
@@ -167,18 +172,18 @@ def main(argv=None):
         argv = sys.argv
     try:
         if not dockutilExists():
-            print("dockutil not found")
-            print("Get it from https://github.com/kcrawford/dockutil")
-            print("or run \"git clone https://github.com/kcrawford/dockutil.git\"")
+            print "dockutil not found"
+            print "Get it from https://github.com/kcrawford/dockutil"
+            print "or run \"git clone https://github.com/kcrawford/dockutil.git\""
             return 1
 
-        confirmation = input("Are you sure? y/n: ").lower()
+        confirmation = raw_input("Are you sure? y/n: ").lower()
         if confirmation == 'y':
-            print("Continuing...")
+            print "Continuing..."
         elif confirmation == '' or confirmation == 'n':
             raise Usage("Exiting...")
         else:
-            print('Please enter y or n.')
+            print 'Please enter y or n.'
             return 1
 
         # Start with an empty Dock
@@ -187,23 +192,23 @@ def main(argv=None):
         # Add standard Apple apps
         for anApp in appleApps:
             dockutilAdd(anApp, None)
-            #print("Added %s" % anApp)
+            #print "Added %s" % anApp
 
         # Add 3rd party apps
         for anApp in thirdPartyApps:
             if os.path.exists(anApp["path"]) or anApp["forced"]:
                 dockutilAdd(anApp["path"], anApp["args"])
-                #print("Added %s" % anApp["path"])
+                #print "Added %s" % anApp["path"]
             else:
-                print("Skipped %s" % anApp["path"])
+                print "Skipped %s" % anApp["path"]
 
         # Add folders
         addFolders()
 
-        print("Done. You might want to restart Dock by running \"killall Dock\"")
+        print "Done. You might want to restart Dock by running \"killall Dock\""
 
-    except Usage as err:
-        print("Error: {0}".format(err))
+    except Usage, err:
+        print >> sys.stderr, str(err.msg)
         return 2
 
 if __name__ == "__main__":
