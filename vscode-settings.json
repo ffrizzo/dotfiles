@@ -42,11 +42,7 @@
         ],
         "formatOnSave": true
     },
-    "diffEditor.ignoreTrimEhiteSpace": true,
-    "breadcrumbs.enabled": true,
-    "files.exclude": {
-        "**/.git": true
-    },
     "workbench.iconTheme": "vscode-icons",
-    "python.jediEnabled": false
+    "gitlens.views.fileHistory.enabled": true,
+    "gitlens.views.lineHistory.enabled": true
 }

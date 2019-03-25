@@ -9,7 +9,6 @@ echo "Software Update"
 softwareupdate -ia --verbose
 
 sh install-homebrew.sh
-# sh install-atom-plugins.sh
 sh install-vscode-plugins.sh
 sh install-mass-apps.sh
 
@@ -26,15 +25,14 @@ cp .inputrc ~/
 cp .gitconfig ~/
 cp .gitignore_global ~/
 
-cp -r .git-hooks ~/
+cp -r .git-hooks ~/.git-hooks
 
 echo ""
 echo "Setup apps on dock"
 python setup-dock.py
 killall Dock
 
-# mkdir -p ~/.atom
-# cp config.cson ~/.atom
-# cp snippets.cson ~/.atom
-
 cp vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json
+cp vscode-keybidings.json ~/Library/Application\ Support/Code/User/keybindings.json
+
+terraform -install-autocomplete
