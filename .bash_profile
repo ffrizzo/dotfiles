@@ -14,12 +14,10 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 
 #completion's
 if type brew &>/dev/null; then
-  if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+  if [[ -f $(brew --prefix)/etc/profile.d/bash_completion.sh ]];
+  then
+    source "$(brew --prefix)/etc/profile.d/bash_completion.sh"
   fi
-
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh"  
 fi
 
 # git prompt
@@ -30,15 +28,17 @@ export GIT_PS1_SHOWSTASHSTATE=true
 
 export EDITOR='code'
 
+export NVM_DIR=$HOME/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 export PYENV_ROOT=/usr/local/var/pyenv
 eval "$(pyenv virtualenv-init -)"
 
+export GO111MODULE=on
 export GOPATH=$HOME/Documents/workspaces/go/
 export PATH=$PATH:$GOPATH/bin
 
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
-
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 #alias
 alias ll='ls -lha'
@@ -55,3 +55,4 @@ alias st='open -a SourceTree'
 
 # Run source on bash_completion at the end of file to make sure process all alias
 source $HOME/.bash_completion
+complete -c /usr/local/bin/terraform terraform

@@ -1,7 +1,6 @@
 {
     "workbench.activityBar.visible": true,
     "files.autoSave": "onFocusChange",
-    "vsicons.dontShowNewVersionMessage": true,
     "atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.formatOnPaste": true,
@@ -20,10 +19,8 @@
         "suppressUpdateNotice": false,
         "suppressWelcomeNotice": true
     },
-    "window.zoomLevel": 0,
-    "go.formatTool": "goimports",
     "gitlens.keymap": "alternate",
-    "gitlens.historyExplorer.enabled": true,
+    "gitlens.codeLens.enabled": false,
     "gitlens.codeLens.scopes": [
         "document",
         "containers"
@@ -34,6 +31,29 @@
         "line",
         "overview"
     ],
+    "gitlens.views.fileHistory.enabled": true,
+    "gitlens.views.lineHistory.enabled": true,
+    "go.useLanguageServer": true,
+    "go.alternateTools": {
+        "go-langserver": "gopls"
+    },
+    "go.languageServerExperimentalFeatures": {
+        "format": true,
+        "autoComplete": true,
+        "goToDefinition": true,
+        "hover": true,
+        "signatureHelp": true,
+        "goToTypeDefinition": true
+    },
+    "go.buildOnSave": "off",
+    "go.vetOnSave": "off",
+    "[go]": {
+        "editor.snippetSuggestions": "none",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+    },
     "terraform.format": {
         "enable": true,
         "ignoreExtensionsOnSave": [
@@ -42,7 +62,22 @@
         ],
         "formatOnSave": true
     },
+    "extensions.ignoreRecommendations": false,
+    "terminal.integrated.shell.osx": "/usr/local/bin/bash",
+    "terminal.integrated.rendererType": "dom",
+    "terraform.indexing": {
+        "enabled": true,
+        "liveIndexing": false,
+        "delay": 500,
+        "exclude": [
+            ".terraform/**/*",
+            "**/.terraform/**/*"
+        ]
+    },
+    "terraform.languageServer": {
+        "enabled": false,
+        "args": []
+    },
+    "window.zoomLevel": 0,
     "workbench.iconTheme": "vscode-icons",
-    "gitlens.views.fileHistory.enabled": true,
-    "gitlens.views.lineHistory.enabled": true
 }

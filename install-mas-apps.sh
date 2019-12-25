@@ -2,4 +2,4 @@
 echo ""
 echo "Installing MAS apps…"
 
-mas install 926036361 #lp
+mas install 1439967473 
