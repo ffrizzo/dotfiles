@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 echo ""
 echo "Instaling Homebrew"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"

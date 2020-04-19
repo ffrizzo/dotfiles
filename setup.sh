@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 echo ""
 echo "Setup OsX"
 
@@ -12,14 +12,13 @@ sh install-homebrew.sh
 sh install-vscode-plugins.sh
 sh install-mass-apps.sh
 
-sh symlinks.sh
+sh install-zsh.sh
 
 sudo sh osx-system-defaults.sh
 sh osx-user-defaults.sh
 
-cp .bash_completion ~/
-cp .bash_prompt ~/
-cp .bash_profile ~/
+cp .profile ~/
+cp .zshrc ~/
 cp .inputrc ~/
 cp .gitconfig ~/
 cp .gitignore_global ~/

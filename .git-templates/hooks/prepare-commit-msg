@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Comment this line if you want to always concatenate the branch name when it is missing.
 # This line will avoid the rebase message changes that is a little annoying.
