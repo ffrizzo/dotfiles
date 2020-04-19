@@ -31,6 +31,7 @@ brew install yarn
 brew install httpie
 brew install hugo
 brew install trash
+brew install upx
 
 brew install golangci/tap/golangci-lint
 brew install goreleaser/tap/goreleaser
@@ -49,14 +50,15 @@ brew install warrensbox/tap/tgswitch
 brew install mas
 brew install dockutil
 
-brew cask install google-backup-and-sync
+brew cask install authy
 
 brew cask install google-chrome-canary
 brew cask install firefox-developer-edition
 brew cask install opera-developer
 brew cask install tor-browser
+brew cask install brave-browser
+brew cask install transmission
 
-brew cask install adobe-acrobat-reader
 brew cask install google-hangouts
 brew cask install spotify
 brew cask install the-unarchiver
@@ -70,31 +72,16 @@ brew cask install blue-jeans
 brew cask install java
 brew install git-credential-manager
 
-# brew cask install virtualbox
-# brew cask install vmware-fusion
-# brew cask install vagrant
-
 brew cask install shiftit
 brew cask install iterm2
 
+brew cask install balenaetcher
 brew cask install arduino
-# brew cask install atom
-brew cask install intellij-idea-ce
-# brew cask install pycharm-ce
 brew cask install visual-studio-code
 brew cask install paw
 
 brew cask install sourcetree
 brew cask install diffmerge
-
-# brew cask install studio-3t
-# brew cask install pgadmin4
-# brew cask install mysqlworkbench
-
-# brew install hyperkit
-
-# brew install docker-machine
-# brew install docker-machine-driver-hyperkit
 
 brew install kubernetes-cli
 brew install helm
@@ -108,7 +95,6 @@ brew cask install minikube
 
 #install homebrew completions
 brew install bash-completion
-brew install vagrant-completion
 
 echo ""
 echo "Cleanup brew formulas"

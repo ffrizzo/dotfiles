@@ -2,4 +2,4 @@
 echo ""
 echo "Installing MAS apps…"
 
-mas install 1439967473 
+mas install 1439967473 #okta

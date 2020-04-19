@@ -12,7 +12,6 @@ sh install-homebrew.sh
 sh install-vscode-plugins.sh
 sh install-mass-apps.sh
 
-sh update-permission.sh
 sh symlinks.sh
 
 sudo sh osx-system-defaults.sh
@@ -25,7 +24,7 @@ cp .inputrc ~/
 cp .gitconfig ~/
 cp .gitignore_global ~/
 
-cp -r .git-hooks ~/.git-hooks
+cp -r .git-templates ~/.git-templates
 
 echo ""
 echo "Setup apps on dock"

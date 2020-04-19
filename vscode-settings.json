@@ -1,9 +1,8 @@
 {
-    "workbench.activityBar.visible": true,
-    "files.autoSave": "onFocusChange",
     "atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.formatOnPaste": true,
+    "files.autoSave": "onFocusChange",
     "files.associations": {
         "Dockerfile*": "dockerfile"
     },
@@ -52,7 +51,7 @@
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
-        },
+        }
     },
     "terraform.format": {
         "enable": true,
@@ -79,5 +78,6 @@
         "args": []
     },
     "window.zoomLevel": 0,
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.activityBar.visible": true,
+    "workbench.iconTheme": "vscode-icons"
 }

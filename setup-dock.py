@@ -38,11 +38,6 @@ thirdPartyApps = [
     "forced": True
     },
     {
-    "path": "/Applications/Intellij IDEA CE.app",
-    "args": [ "--after", "System Preferences" ],
-    "forced": True
-    },
-    {
     "path": "/Applications/iTerm.app",
     "args": [ "--after", "System Preferences" ],
     "forced": True
