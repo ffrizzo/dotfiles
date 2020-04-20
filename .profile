@@ -9,7 +9,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 export GO111MODULE=on
-export GOPATH=$HOME/Documents/workspaces/go/
+export GOPATH=$HOME/workspaces/go/
 export PATH=$PATH:$GOPATH/bin
 
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"

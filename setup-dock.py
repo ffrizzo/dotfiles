@@ -20,10 +20,9 @@ import getpass
 # Standard Applications
 # =======================================
 appleApps = [
-    "/Applications/Launchpad.app",
-    "/Applications/Mission Control.app",
-    "/Applications/System Preferences.app",
-    "/Applications/Utilities/Terminal.app",
+    "/System/Applications/Launchpad.app",
+    "/System/Applications/Mission Control.app",
+    "/System/Applications/System Preferences.app",
     "/Applications/Safari.app"
     ]
 

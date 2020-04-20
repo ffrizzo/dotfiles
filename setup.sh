@@ -12,12 +12,13 @@ sh install-homebrew.sh
 sh install-vscode-plugins.sh
 sh install-mass-apps.sh
 
-sh install-zsh.sh
+sh install-zsh.sh       
 
 sudo sh osx-system-defaults.sh
 sh osx-user-defaults.sh
 
 cp .profile ~/
+cp .alias ~/
 cp .zshrc ~/
 cp .inputrc ~/
 cp .gitconfig ~/

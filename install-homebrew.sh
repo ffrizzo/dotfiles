@@ -4,7 +4,7 @@ echo "Instaling Homebrew"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 #installl homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 echo ""
 echo "Instaling applications from homebrew"
@@ -12,6 +12,7 @@ echo "Instaling applications from homebrew"
 #tap hombrew cask-versions and completions
 brew tap homebrew/cask-drivers
 brew tap homebrew/cask-versions
+brew tap caskroom/fonts
 
 #install hombrew formulas
 brew install gettext
@@ -68,6 +69,8 @@ brew cask install slack-beta
 brew cask install keybase
 brew cask install harvest
 brew cask install blue-jeans
+brew cask install zoomus
+brew cask install microsoft-outlook
 
 brew cask install java
 brew install git-credential-manager
@@ -90,11 +93,19 @@ brew install kubectx
 brew install kops
 brew install k3d
 
+brew cask install lens
+brew cask install spin
+
 brew cask install docker
 brew cask install minikube
 
 #install homebrew completions
-brew install bash-completion
+brew install zsh-completion
+
+brew cask install font-source-code-pro-for-powerline
+brew cask install font-source-code-pro
+brew cask install font-source-sans-pro
+brew cask install font-source-serif-pro
 
 echo ""
 echo "Cleanup brew formulas"
