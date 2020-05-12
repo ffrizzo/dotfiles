@@ -14,15 +14,3 @@ export PATH=$PATH:$GOPATH/bin
 
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 
-#alias
-alias ll='ls -lha'
-alias ls='ls -a'
-
-alias workspace='cd ~/Documents/workspaces'
-
-alias gcma='git commit -am'
-alias ga='git add .'
-alias gp='git push'
-alias gr='git rebase'
-
-alias st='open -a SourceTree'

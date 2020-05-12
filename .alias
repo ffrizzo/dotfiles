@@ -9,12 +9,12 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias .....='cd ../../../../..'
 alias cd..='cd ..'
+alias ll='ls -lha'
 alias lt='ls -lhatFG'
 alias llt='ls -lhatF | less'
 alias c='clear'
-alias e='exit'
 
-
+alias st='open -a SourceTree'
 
 #################################
 # File manipulation
@@ -73,8 +73,6 @@ function kill_grep(){ # kill using greep return
   ID_PROCESS=$(ps_grep $1|awk '{print $2}')
   kill -9 $ID_PROCESS
 }
-function restart_linux_cam(){ sudo rmmod -v uvcvideo && sudo modprobe -v uvcvideo; }
-alias restart_mac_cam='sudo killall VDCAssistant'
 alias zreset='source ~/.zshrc'
 
 
@@ -83,7 +81,6 @@ alias zreset='source ~/.zshrc'
 # Miscellaneous
 #################################
 alias asciicast2gif='time docker run --rm -v $PWD:/data asciinema/asciicast2gif'
-alias bash_aliases='exec zsh'
 alias dcomp='docker-compose'
 alias find_file='find . -name'
 alias grep_inside='grep -rnw . -e'
@@ -92,9 +89,6 @@ alias mkdir='mkdir -pv'
 alias rm_dir='rm -Rf'
 alias webify='mogrify -resize 690\> *.png'
 alias wget='wget -c'
-alias brewv="curl -s https://gist.githubusercontent.com/voiski/973ec1fe0e4b05d52133c9d0438eb2de/raw//brewv.sh | bash -s"
-alias brew-grapth="curl -s https://raw.githubusercontent.com/martido/brew-graph/master/brew-graph.rb | ruby - --installed"
-alias brew-grapth-png="brew-grapth | dot -Tpng -o/tmp/brew-graph.png && open /tmp/brew-graph.png"
 
 function bash-record-asciinema(){ # bash-record-asciinema cast_name no_override:optional
 	[ -z "$1" ] && echo "Usage: $0 <name>" && return 1
