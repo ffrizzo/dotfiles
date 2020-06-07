@@ -1,6 +1,5 @@
 #!/bin/zsh
-echo ""
-echo "Set OsX system defaults"
+printf "\nSet OsX system defaults\n"
 # ==============================================
 # Set energy preferences
 # ==============================================

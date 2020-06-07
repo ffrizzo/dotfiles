@@ -1,5 +1,4 @@
 #!/bin/zsh
-echo ""
-echo "Installing MAS apps…"
+printf "\nInstalling MAS apps...\n"
 
 mas install 1439967473 #okta

@@ -1,6 +1,18 @@
 {
     "atomKeymap.promptV3Features": true,
-    "editor.multiCursorModifier": "ctrlCmd",
+    "cSpell.userWords": [
+        "Causef",
+        "Debugf",
+        "Infof",
+        "Newf",
+        "artifactory",
+        "ecomdev",
+        "gomock",
+        "gorelease",
+        "jaxf",
+        "kubernetes",
+        "twilio"
+    ],
     "editor.formatOnPaste": true,
     "files.autoSave": "onFocusChange",
     "files.associations": {
@@ -62,10 +74,11 @@
         "formatOnSave": true
     },
     "extensions.ignoreRecommendations": false,
-    "terminal.integrated.shell.osx": "/usr/local/bin/bash",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.lineHeight": 1.3,
     "terminal.integrated.rendererType": "dom",
     "terraform.indexing": {
-        "enabled": true,
+        "enabled": false,
         "liveIndexing": false,
         "delay": 500,
         "exclude": [
@@ -74,7 +87,7 @@
         ]
     },
     "terraform.languageServer": {
-        "enabled": false,
+        "enabled": true,
         "args": []
     },
     "window.zoomLevel": 0,
