@@ -31,7 +31,6 @@ plugins=(
   git
   git-extras
   git-flow
-  go
   golang
   helm
   history
@@ -66,3 +65,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source $HOME/.profile
 source $HOME/.aliases
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
