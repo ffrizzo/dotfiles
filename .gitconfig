@@ -12,7 +12,6 @@
 	summary = true
 [core]
 	excludesfile = ~/.gitignore-global
-	hooksPath = ~/.git-templates
 	editor = code -n -w
 [push]
 	default = current
