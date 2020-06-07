@@ -1,11 +1,11 @@
 #!/bin/zsh
-echo ""
-echo "Installing vscode plugins"
+printf "\nInstalling vscode plugins...\n"
 
 code --install-extension 2gua.rainbow-brackets
 code --install-extension aaron-bond.better-comments
 code --install-extension bbenoist.vagrant
 code --install-extension bungcip.better-toml
+code --install-extension dbaeumer.vscode-eslint
 code --install-extension DavidAnson.vscode-markdownlint
 code --install-extension donjayamanne.githistory
 code --install-extension eamodio.gitlens
@@ -24,5 +24,6 @@ code --install-extension ms-vscode.atom-keybindings
 code --install-extension ms-vscode.Go
 code --install-extension redhat.vscode-yaml
 code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension usernamehw.errorlens
 code --install-extension vscode-icons-team.vscode-icons
 code --install-extension wholroyd.jinja
