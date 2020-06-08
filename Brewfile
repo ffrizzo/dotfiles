@@ -1,7 +1,7 @@
 #tap hombrew cask-versions and completions
 tap 'homebrew/cask-drivers'
 tap 'homebrew/cask-versions'
-tap 'caskroom/fonts'
+tap 'homebrew/cask-fonts'
 
 #install hombrew formulas
 brew 'gettext'
@@ -28,7 +28,6 @@ brew 'golangci/tap/golangci-lint'
 brew 'goreleaser/tap/goreleaser'
 
 brew 'awscli'
-brew 'TylerBrock/saw'
 brew 'packer'
 brew 'ansible'
 brew 'tree'
@@ -88,7 +87,6 @@ brew 'k3d'
 brew 'istioctl'
 
 cask 'lens'
-cask 'spin'
 
 cask 'docker'
 

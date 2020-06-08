@@ -8,7 +8,6 @@ softwareupdate -ia --verbose
 
 sh install-homebrew.sh
 sh install-vscode-plugins.sh
-sh install-mass-apps.sh
 
 sh install-zsh.sh       
 
@@ -33,3 +32,6 @@ cp vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json
 cp vscode-keybidings.json ~/Library/Application\ Support/Code/User/keybindings.json
 
 terraform -install-autocomplete
+
+mkdir -p ~/.nvm
+mkdir -p ~/.pyenv
