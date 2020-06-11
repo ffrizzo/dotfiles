@@ -13,7 +13,7 @@ sudo sh osx-system-defaults.sh
 sh osx-user-defaults.sh
 
 cp .profile ~/
-cp .alias ~/
+cp .aliases ~/
 cp .zshrc ~/
 cp .inputrc ~/
 cp .gitconfig ~/
@@ -29,8 +29,6 @@ killall Dock
 
 cp vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json
 cp vscode-keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
-
-terraform -install-autocomplete
 
 mkdir -p ~/.nvm
 mkdir -p ~/.pyenv

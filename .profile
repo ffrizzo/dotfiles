@@ -27,6 +27,7 @@ load-tfswitch() {
 
   if [ -f "$tfswitchrc_path" ]; then
     tfswitch
+    terraform -install-autocomplete
   fi
 }
 add-zsh-hook chpwd load-tfswitch
