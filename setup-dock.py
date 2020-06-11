@@ -67,7 +67,7 @@ thirdPartyApps = [
     "forced": True
     },
     {
-    "path": "/Applications/Opera developer.app",
+    "path": "/Applications/Brave Browser.app",
     "args": [ "--after", "Safari" ],
     "forced": True
     }
