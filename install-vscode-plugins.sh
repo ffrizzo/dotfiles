@@ -9,7 +9,8 @@ code --install-extension dbaeumer.vscode-eslint
 code --install-extension DavidAnson.vscode-markdownlint
 code --install-extension donjayamanne.githistory
 code --install-extension eamodio.gitlens
-code --install-extension mauve.terraform
+code --install-extension golang.go
+code --install-extension hashicorp.terraform
 code --install-extension mikestead.dotenv
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
@@ -21,7 +22,6 @@ code --install-extension ms-vscode-remote.remote-ssh-explorer
 code --install-extension ms-vscode-remote.remote-wsl
 code --install-extension ms-vscode-remote.vscode-remote-extensionpack
 code --install-extension ms-vscode.atom-keybindings
-code --install-extension ms-vscode.Go
 code --install-extension redhat.vscode-yaml
 code --install-extension streetsidesoftware.code-spell-checker
 code --install-extension usernamehw.errorlens

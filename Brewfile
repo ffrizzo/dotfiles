@@ -1,7 +1,10 @@
-#tap hombrew cask-versions and completions
 tap 'homebrew/cask-drivers'
 tap 'homebrew/cask-versions'
 tap 'homebrew/cask-fonts'
+
+tap 'golangci/tap/'
+tap 'goreleaser/tap/'
+tap 'warrensbox/tap/'
 
 #install hombrew formulas
 brew 'gettext'
@@ -24,8 +27,8 @@ brew 'hugo'
 brew 'trash'
 brew 'upx'
 
-brew 'golangci/tap/golangci-lint'
-brew 'goreleaser/tap/goreleaser'
+brew 'golangci-lint'
+brew 'goreleaser'
 
 brew 'awscli'
 brew 'packer'
@@ -34,8 +37,8 @@ brew 'tree'
 brew 'travis'
 brew 'gitlab-runner'
 
-brew 'warrensbox/tap/tfswitch'
-brew 'warrensbox/tap/tgswitch'
+brew 'tfswitch'
+brew 'tgswitch'
 
 brew 'mas'
 brew 'dockutil'
@@ -93,7 +96,6 @@ cask 'docker'
 #install homebrew completions
 brew 'zsh-completion'
 
-cask 'font-source-code-pro-for-powerline'
 cask 'font-source-code-pro'
 cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'

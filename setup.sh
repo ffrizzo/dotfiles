@@ -9,8 +9,6 @@ softwareupdate -ia --verbose
 sh install-homebrew.sh
 sh install-vscode-plugins.sh
 
-sh install-zsh.sh       
-
 sudo sh osx-system-defaults.sh
 sh osx-user-defaults.sh
 
@@ -19,7 +17,8 @@ cp .alias ~/
 cp .zshrc ~/
 cp .inputrc ~/
 cp .gitconfig ~/
-cp .gitignore_global ~/
+cp .gitignore-global ~/
+cp .p10k.zsh ~/
 cp -r .git-templates ~/.git-templates
 
 yes | cp -rf ./Library/Preferences/* ~/Library/Preferences
@@ -29,9 +28,11 @@ python setup-dock.py
 killall Dock
 
 cp vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json
-cp vscode-keybidings.json ~/Library/Application\ Support/Code/User/keybindings.json
+cp vscode-keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 
 terraform -install-autocomplete
 
 mkdir -p ~/.nvm
 mkdir -p ~/.pyenv
+
+sh install-zsh.sh      
