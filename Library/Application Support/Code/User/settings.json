@@ -9,11 +9,20 @@
         "ecomdev",
         "gomock",
         "gorelease",
+        "hashicorp",
         "jaxf",
         "kubernetes",
+        "ldap",
         "twilio"
     ],
     "editor.formatOnPaste": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.fixAll.eslint": true
+    },
+    "eslint.options": {
+        "configFile": ".eslintrc.js"
+    },    
     "files.autoSave": "onFocusChange",
     "files.associations": {
         "Dockerfile*": "dockerfile"
@@ -87,8 +96,10 @@
         ]
     },
     "terraform.languageServer": {
-        "enabled": true,
-        "args": []
+        "external": true,
+        "args": [
+            "serve"
+        ]
     },
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": true,

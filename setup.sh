@@ -22,13 +22,11 @@ cp .p10k.zsh ~/
 cp -r .git-templates ~/.git-templates
 
 yes | cp -rf ./Library/Preferences/* ~/Library/Preferences
+yes | cp -rf ./Library/Application\ Support/* ~/Library/Application\ Support
 
 printf "\nSetup apps on dock...\n"
 python setup-dock.py
 killall Dock
-
-cp vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json
-cp vscode-keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 
 mkdir -p ~/.nvm
 mkdir -p ~/.pyenv
