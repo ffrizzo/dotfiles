@@ -59,7 +59,6 @@ cask 'vlc'
 cask 'skype'
 cask 'slack-beta'
 cask 'keybase'
-cask 'harvest'
 cask 'discord'
 cask 'blue-jeans'
 cask 'zoomus'
@@ -100,3 +99,5 @@ cask 'font-source-code-pro'
 cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
 cask 'font-meslo-for-powerline'
+
+mas "harvest", id: 506189836

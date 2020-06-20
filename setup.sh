@@ -8,6 +8,7 @@ softwareupdate -ia --verbose
 
 sh install-homebrew.sh
 sh install-vscode-plugins.sh
+sh install-tools.sh
 
 sudo sh osx-system-defaults.sh
 sh osx-user-defaults.sh

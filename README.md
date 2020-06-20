@@ -5,11 +5,11 @@ This include the following step.
   * install xcode-cli
   * install homebrew
   * install all applications from homebrew
-  * install atom plugins
+  * install VS Code plugins
   * install external softwares
   * run set OsX system defaults
   * run set user defaults
-  * copy bash configurations to home user folder
+  * copy configurations to home user folder
   * install latest updates from app store
   * configure Dock with the applications
 
