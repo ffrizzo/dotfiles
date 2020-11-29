@@ -5,14 +5,19 @@ source $(brew --prefix nvm)/nvm.sh
 
 export PYENV_ROOT=$HOME/.pyenv
 export PATH="$PYENV_ROOT/bin:$PATH"
+
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+eval "$(jump shell)"
 
 export GO111MODULE=on
 export GOPATH=$HOME/workspaces/go/
 export PATH=$PATH:$GOPATH/bin
 
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=/Applications/VMware\ OVF\ Tool/:$PATH
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
@@ -43,3 +48,4 @@ load-tgswitch() {
 }
 add-zsh-hook chpwd load-tgswitch
 load-tgswitch
+

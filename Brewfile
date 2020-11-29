@@ -8,6 +8,7 @@ tap 'warrensbox/tap/'
 
 #install hombrew formulas
 brew 'gettext'
+brew 'bat'
 brew 'fd'
 brew 'jq'
 brew 'yq'
@@ -15,6 +16,7 @@ brew 'jump'
 brew 'yamllint'
 brew 'dos2unix'
 brew 'git'
+brew 'md5sha1sum'
 brew 'mercurial'
 brew 'wget'
 brew 'go'
@@ -55,7 +57,6 @@ cask 'transmission'
 cask 'google-hangouts'
 cask 'spotify'
 cask 'the-unarchiver'
-cask 'vlc'
 cask 'skype'
 cask 'slack-beta'
 cask 'keybase'
@@ -63,11 +64,16 @@ cask 'discord'
 cask 'blue-jeans'
 cask 'zoomus'
 cask 'microsoft-outlook'
+cask 'microsoft-teams'
+cask 'microsoft-word'
 cask 'logitech-camera-settings'
+cask 'logitech-options'
 
 cask 'java'
 brew 'git-credential-manager'
 
+cask 'gramarly'
+cask 'istat-menus'
 cask 'shiftit'
 cask 'iterm2'
 cask 'ngrok'
@@ -100,4 +106,6 @@ cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
 cask 'font-meslo-for-powerline'
 
-mas "harvest", id: 506189836
+mas "Grammarly", id: 1462114288
+mas "VMware Remote Console", id: 1230249825
+mas "Harvest", id: 506189836
