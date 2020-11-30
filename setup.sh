@@ -15,6 +15,7 @@ sh osx-user-defaults.sh
 
 cp .profile ~/
 cp .aliases ~/
+cp .kubectl-aliases ~/
 cp .zshrc ~/
 cp .inputrc ~/
 cp .gitconfig ~/
