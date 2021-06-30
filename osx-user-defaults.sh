@@ -1,5 +1,5 @@
 #!/bin/zsh
-printf "\nSet OsX user defaults\n"
+echo "\nSet OsX user defaults"
 
 # ==============================================
 # Trackpad

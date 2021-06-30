@@ -126,24 +126,6 @@ function bash-record-svg(){ # bash-record final_gif_name speed:optional cast_fil
 		# Missing speed
 }
 
-function find_rm(){ # find and remove
-  find_file $1 -print0|xargs -0 rm
-}
-
-function docker_bash(){ # up the container and enter in bash of it
-  docker exec -it $1 bash
-}
-
-function docker_run(){ # docker_run [yourimage] <optional:bash> # start a container with given image
-	docker run --rm -it -v $(pwd):/app -w /app $*
-}
-
-function docker_log(){ # internal logs
-	local pred='process matches ".*(ocker|vpnkit).*"
-  || (process in {"taskgated-helper", "launchservicesd", "kernel"} && eventMessage contains[c] "docker")'
-	/usr/bin/log stream --style syslog --level=debug --color=always --predicate "$pred"
-}
-
 function docker_rmi(){ # iterative docker image deletion
 	local before=$(docker system df|grep 'Images' | awk '{print $4}')
 	for image in $(docker images --format "[{{.ID}}]{{.Repository}}:{{.Tag}}")
@@ -162,10 +144,6 @@ function docker_rmi(){ # iterative docker image deletion
 	"
 }
 
-function curl_json(){
-  curl $*|python -m json.tool
-}
-
 function java_switch () { # Swith java version java_switch -v 1.7
   VERSION=$2
   [ -z "$VERSION" ] && VERSION=$1
@@ -174,20 +152,6 @@ function java_switch () { # Swith java version java_switch -v 1.7
   echo "java -version:"
   java -version
 }
-
-function kubectl_token() { # kubectl user credentials with OIDC
-  current_context=$(kubectl config current-context)
-	user_id=$(kubectl config view -o jsonpath="{.contexts[?(@.name == \"${current_context}\")].context.user}")
-	admin_user=$(kubectl config view -o jsonpath="{.users[?(@.name == \"${current_context}\")].user.username}")
-	admin_password=$(kubectl config view -o jsonpath="{.users[?(@.name == \"${current_context}\")].user.password}")
-	user_token=$(kubectl config view -o jsonpath="{.users[?(@.name == \"${user_id}\")].user.auth-provider.config.id-token}")
-  echo "Current context: $current_context
-  admin> user ${admin_user:-admin}: ${admin_password:-'n/a'}
-  OIDC> user ${user_id}: ${user_token}
-  "
-}
-
-alias k="kubectl"
 
 function cheat(){ # cheat https://github.com/chubin/cheat.sh
 	local x=${@:2}
@@ -230,12 +194,6 @@ function g.t.d(){ # git delete tag and push this tag
 }
 
 #################################
-# Run some script
-#################################
-alias r_text='subl'
-
-
-#################################
 # Connect
 #################################
 alias myip='curl http://ipecho.net/plain; echo'
@@ -248,7 +206,6 @@ alias c_wifi_stats='cat /proc/net/wireless'
 #################################
 # Open
 #################################
-alias o_file_aliases='r_text ~/.dotfiles'
 alias o_file_hosts='r_text /etc/hosts'
 alias o_file_resolver='r_text /etc/resolv.conf'
 alias o_file_ssh='r_text ~/.ssh/config'
@@ -262,18 +219,6 @@ alias o_file_aws='r_text ~/.aws/credentials ~/.aws/config'
 #################################
 alias w_alias='cat $HOME/.dotfiles/aliases.zsh | grep alias'
 alias w_function='cat $HOME/.dotfiles/aliases.zsh | grep function'
-
-
-
-#################################
-# python
-#################################
-
-alias p.env='p.env2'
-alias p.env.activate='source ./.env/bin/activate'
-alias p.env.deactivate='deactivate'
-alias p.env2='virtualenv -p /usr/local/bin/python2 .env'
-alias p.env3='virtualenv -p /usr/local/bin/python3 .env'
 
 #################################
 # file mapping

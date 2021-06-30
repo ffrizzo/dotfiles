@@ -52,11 +52,6 @@ thirdPartyApps = [
     "forced": True
     },
     {
-    "path": "/Applications/Skype.app",
-    "args": [ "--after", "Safari" ],
-    "forced": True
-    },
-    {
     "path": "/Applications/Firefox Developer Edition.app",
     "args": [ "--after", "Safari" ],
     "forced": True

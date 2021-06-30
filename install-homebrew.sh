@@ -1,14 +1,11 @@
 #!/bin/zsh
-printf "\nInstaling Homebrew\n"
+echo "\nInstaling Homebrew"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-#installl homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# Installl homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-printf "\nInstaling applications from homebrew\n"
-
-brew tap homebrew/bundle
+echo "\nInstaling applications from homebrew"
 brew bundle
-
-printf "\nCleanup brew formulas\n"
+echo "\nCleanup brew formulas"
 brew cleanup
