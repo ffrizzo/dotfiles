@@ -4,11 +4,13 @@ tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
+tap "homebrew/services"
 tap "golangci/tap"
 tap "goreleaser/tap"
 tap "romkatv/powerlevel10k"
 tap "warrensbox/tap"
 
+brew "arkade"
 brew "ansible"
 brew "awscli"
 brew "bash"
@@ -64,11 +66,11 @@ brew "warrensbox/tap/tfswitch"
 brew "warrensbox/tap/tgswitch"
 
 cask "balenaetcher"
-cask "bisq"
 
 cask "logitech-camera-settings"
 cask "logitech-options"
 
+cask "microsoft-excel"
 cask "microsoft-outlook"
 cask "microsoft-teams"
 cask "microsoft-word"
@@ -108,6 +110,7 @@ cask "google-hangouts"
 cask "blue-jeans"
 cask "zoom"
 
+cask "grammarly"
+
 mas "Harvest", id: 506189836
 mas "Grammarly for Safari", id: 1462114288
-mas "VMware Remote Console", id: 1230249825
