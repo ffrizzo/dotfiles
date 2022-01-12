@@ -17,6 +17,9 @@ mkdir -p ~/.pyenv
 
 sh install-zsh.sh      
 
+echo "\nInstalling Fonts"
+open -a Font\ Book ./fonts/*.ttf
+
 echo "\nSetup apps on dock..."
 python setup-dock.py
 killall Dock
