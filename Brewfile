@@ -106,8 +106,7 @@ cask "google-chrome-canary"
 cask "opera-developer"
 cask "tor-browser"
 
-cask "google-hangouts"
-cask "blue-jeans"
+cask "bluejeans"
 cask "zoom"
 
 cask "grammarly"

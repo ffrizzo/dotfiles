@@ -9,7 +9,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="agnoster"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -23,7 +23,6 @@ plugins=(
   brew
   celery
   cp
-  django
   docker
   docker-compose
   gcloud
@@ -43,31 +42,62 @@ plugins=(
   node
   npm
   nvm
-  osx
+  macos
   pip
   pipenv
   postgres
   pyenv
   python
   redis-cli
-  rust
-  rustup
   terraform
   vagrant
   vault
   virtualenv
   vscode
   xcode
+  yarn
 
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.kubectl-aliases
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-source ~/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source $HOME/.aliases
-source $HOME/.kubectl-aliases
-source $HOME/.profile
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
+
+# Terraform version
+load-tfswitch() {
+  local tfswitchrc_path=".tfswitchrc"
+
+  if [ -f "$tfswitchrc_path" ]; then
+    tfswitch
+  fi
+}
+add-zsh-hook chpwd load-tfswitch
+load-tfswitch
+
+# Terragrunt version
+load-tgswitch() {
+  local tgswitchrc_path=".tgswitchrc"
+
+  if [ -f "$tgswitchrc_path" ]; then
+    tgswitch
+  fi
+}
+add-zsh-hook chpwd load-tgswitch
+load-tgswitch
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/ffrizzo/.nvm/versions/node/v8.2.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/ffrizzo/.nvm/versions/node/v8.2.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/ffrizzo/.nvm/versions/node/v8.2.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/ffrizzo/.nvm/versions/node/v8.2.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
