@@ -2,8 +2,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export EDITOR='code'
 
-export PATH="$HOME/.cargo/bin:$PATH"
-
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
@@ -25,10 +23,6 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
-
-#alias
-alias ll='ls -lha'
-alias ls='ls -a'
 
 alias st='open -a SourceTree'
 

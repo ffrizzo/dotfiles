@@ -1,19 +1,25 @@
 {
     "atomKeymap.promptV3Features": true,
     "cSpell.userWords": [
+        "artifactory",
+        "cachix",
         "Causef",
         "Debugf",
-        "Infof",
-        "Newf",
-        "artifactory",
         "ecomdev",
+        "golangci",
         "gomock",
         "gorelease",
         "hashicorp",
-        "jaxf",
+        "Infof",
         "kubernetes",
         "ldap",
-        "twilio"
+        "Newf",
+        "nixos",
+        "nixpkgs",
+        "SUPABASE",
+        "twilio",
+        "walletconnect",
+        "Warnf"
     ],
     "editor.formatOnPaste": true,
     "editor.codeActionsOnSave": {
@@ -23,9 +29,16 @@
     "eslint.options": {
         "configFile": ".eslintrc.js"
     },    
+    "extensions.ignoreRecommendations": false,
+    "explorer.confirmDragAndDrop": false,
     "files.autoSave": "onFocusChange",
     "files.associations": {
-        "Dockerfile*": "dockerfile"
+        "Dockerfile*": "dockerfile",
+        "docker-compose*": "dockerfile",
+        "*.tf": "terraform",
+        "*.tfvars": "terraform",
+        "*.nomad": "hcl",
+        ".env.*": "dotenv"
     },
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
@@ -34,10 +47,6 @@
         "suppressGitVersionWarning": false,
         "suppressLineUncommittedWarning": false,
         "suppressNoRepositoryWarning": false,
-        "suppressResultsExplorerNotice": false,
-        "suppressShowKeyBindingsNotice": true,
-        "suppressUpdateNotice": false,
-        "suppressWelcomeNotice": true
     },
     "gitlens.keymap": "alternate",
     "gitlens.codeLens.enabled": false,
@@ -51,20 +60,10 @@
         "line",
         "overview"
     ],
-    "gitlens.views.fileHistory.enabled": true,
-    "gitlens.views.lineHistory.enabled": true,
     "go.alternateTools": {
         "go-langserver": "gopls"
     },
     "go.useLanguageServer": true,
-    "go.languageServerExperimentalFeatures": {
-        "format": true,
-        "autoComplete": true,
-        "goToDefinition": true,
-        "hover": true,
-        "signatureHelp": true,
-        "goToTypeDefinition": true
-    },
     "go.buildOnSave": "off",
     "go.vetOnSave": "off",
     "[go]": {
@@ -74,19 +73,10 @@
             "source.organizeImports": true
         }
     },
+    "go.toolsManagement.autoUpdate": true,
     "gopls": {
         "usePlaceholders": true,
     },
-    "terraform.format": {
-        "enable": true,
-        "ignoreExtensionsOnSave": [
-            ".tfsmurf",
-            ".tfvars"
-        ],
-        "formatOnSave": true
-    },
-    "extensions.ignoreRecommendations": false,
-    "python.showStartPage": false,
     "python.linting.lintOnSave": true,
     "python.linting.pylintArgs": [
         "--load-plugins=pylint_django"
@@ -96,26 +86,19 @@
         "editor.insertSpaces": true,
         "editor.formatOnSave": true
     },    
+    "platformio-ide.disablePIOHomeStartup": true,
+    "redhat.telemetry.enabled": false,    
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.lineHeight": 1.3,
-    "terminal.integrated.rendererType": "dom",
-    "terraform.indexing": {
-        "enabled": false,
-        "liveIndexing": false,
-        "delay": 500,
-        "exclude": [
-            ".terraform/**/*",
-            "**/.terraform/**/*"
-        ]
-    },
     "terraform.languageServer": {
         "external": true,
         "args": [
             "serve"
         ]
     },
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "workbench.activityBar.visible": true,
     "workbench.iconTheme": "vscode-icons",
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "vsicons.dontShowNewVersionMessage": true
 }

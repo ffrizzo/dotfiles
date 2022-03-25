@@ -17,6 +17,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  aliases
   ansible
   aws
   branch
@@ -25,6 +26,7 @@ plugins=(
   cp
   docker
   docker-compose
+  dotenv
   gcloud
   gem
   git
@@ -49,18 +51,18 @@ plugins=(
   pyenv
   python
   redis-cli
+  rust
   terraform
   vagrant
   vault
   virtualenv
   vscode
-  xcode
   yarn
 )
 
-source $ZSH/oh-my-zsh.sh
-source $HOME/.kubectl-aliases
+ZSH_ALIAS_FINDER_AUTOMATIC=true
 
+source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -73,7 +75,7 @@ load-tfswitch() {
   local tfswitchrc_path=".tfswitchrc"
 
   if [ -f "$tfswitchrc_path" ]; then
-    tfswitch
+    tfswitch -b $HOME/bin/terraform
   fi
 }
 add-zsh-hook chpwd load-tfswitch
@@ -84,7 +86,7 @@ load-tgswitch() {
   local tgswitchrc_path=".tgswitchrc"
 
   if [ -f "$tgswitchrc_path" ]; then
-    tgswitch
+    tgswitch -b $HOME/bin/terragrunt
   fi
 }
 add-zsh-hook chpwd load-tgswitch
@@ -97,6 +99,6 @@ load-tgswitch
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f $(HOME)/.nvm/versions/node/v8.2.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . $(HOME)/.nvm/versions/node/v8.2.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
-source $(brew --prefix)/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
