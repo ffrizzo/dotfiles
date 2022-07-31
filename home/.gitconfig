@@ -15,20 +15,9 @@
 	editor = code -n -w
 [push]
 	default = current
-[alias]
-	st=status
-	co=checkout
-	br=branch
-	rb=rebase
-	mg=merge
-	cm=commit -a --amend -C HEAD
-	ci=commit -a -v -m
-	pu=push
-	pl=pull
 [commit]
 	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = false
-	template = ~/.stCommitMsg
+	gpgsign = true
 [diff]
 	renames = copies
 [difftool "sourcetree"]
