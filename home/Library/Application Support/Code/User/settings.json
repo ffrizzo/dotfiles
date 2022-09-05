@@ -26,9 +26,6 @@
         "source.fixAll": true,
         "source.fixAll.eslint": true
     },
-    "eslint.options": {
-        "configFile": ".eslintrc.js"
-    },    
     "extensions.ignoreRecommendations": false,
     "explorer.confirmDragAndDrop": false,
     "files.autoSave": "onFocusChange",
@@ -38,8 +35,12 @@
         "*.tf": "terraform",
         "*.tfvars": "terraform",
         "*.nomad": "hcl",
+        "*.pkr.hcl": "hcl",
         ".env.*": "dotenv"
     },
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
         "suppressCommitNotFoundWarning": false,
@@ -85,17 +86,24 @@
         "editor.tabSize": 4,
         "editor.insertSpaces": true,
         "editor.formatOnSave": true
-    },    
+    },
     "platformio-ide.disablePIOHomeStartup": true,
-    "redhat.telemetry.enabled": false,    
+    "redhat.telemetry.enabled": false,
+    "[rust]": {
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    },
+    "rust-analyzer.inlayHints.parameterHints.enable": false,
+    "rust-analyzer.inlayHints.bindingModeHints.enable": false,
+    "rust-analyzer.inlayHints.typeHints.enable": false,
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
+    "terraform.languageServer.enable": true,
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.lineHeight": 1.3,
-    "terraform.languageServer": {
-        "external": true,
-        "args": [
-            "serve"
-        ]
-    },
     "window.zoomLevel": 1,
     "workbench.activityBar.visible": true,
     "workbench.iconTheme": "vscode-icons",
