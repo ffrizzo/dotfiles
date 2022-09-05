@@ -11,6 +11,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="agnoster"
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 
+ZSH_DOTENV_PROMPT=Always
+
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -58,6 +60,9 @@ plugins=(
   virtualenv
   vscode
   yarn
+
+  # zsh-autosuggestions
+  # zsh-syntax-highlighting
 )
 
 ZSH_ALIAS_FINDER_AUTOMATIC=true
@@ -92,13 +97,7 @@ load-tgswitch() {
 add-zsh-hook chpwd load-tgswitch
 load-tgswitch
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f $(HOME)/.nvm/versions/node/v8.2.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . $(HOME)/.nvm/versions/node/v8.2.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f $(HOME)/.nvm/versions/node/v8.2.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . $(HOME)/.nvm/versions/node/v8.2.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
+export GPG_TTY=$(tty)

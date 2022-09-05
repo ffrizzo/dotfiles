@@ -27,4 +27,4 @@ fi
 alias st='open -a SourceTree'
 
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH=/Applications/VMware\ OVF\ Tool/:$PATH
+export PATH="$HOME/bin:$PATH"
