@@ -12,7 +12,7 @@ source $(brew --prefix nvm)/nvm.sh
 eval "$(jump shell)"
 
 export GO111MODULE=on
-export GOPATH=/Volumes/Files/workspaces/go/
+export GOPATH=$HOME/workspaces/go/
 export PATH=$PATH:$GOPATH/bin
 
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
