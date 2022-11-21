@@ -10,20 +10,23 @@ sh install-vscode-plugins.sh
 sudo sh osx-system-defaults.sh
 sh osx-user-defaults.sh
 
-yes | cp -a ./home/ ~/
-
 mkdir -p ~/.nvm
 mkdir -p ~/.pyenv
-
-sh install-zsh.sh
 
 echo "\nInstalling Fonts"
 open -a Font\ Book ./fonts/*.ttf
 
 echo "\nSetup apps on dock..."
-export DOCKUTIL_VERSION=3.0.2
-curl -L https://github.com/kcrawford/dockutil/releases/download/${DOCKUTIL_VERSION}/dockutil-${DOCKUTIL_VERSION}.pkg --output dockutil-${DOCKUTIL_VERSION}.pkg
-sudo installer -pkg dockutil-${DOCKUTIL_VERSION}.pkg -target /
+DOCKUTIL_LOCATION=$(curl -s https://api.github.com/repos/kcrawford/dockutil/releases/latest \
+| grep "browser_download_url" \
+| awk '{ print $2 }' \
+| sed 's/,$//'       \
+| sed 's/"//g' )
+curl -L ${DOCKUTIL_LOCATION} -o dockutil.pkg
+sudo installer -pkg dockutil.pkg -target /
 python3 setup-dock.py
 killall Dock
 rm -rf dockutil-${DOCKUTIL_VERSION}.pkg
+
+sh install-zsh.sh
+yes | cp -a ./home/ ~/

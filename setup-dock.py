@@ -36,7 +36,7 @@ appleApps = [
 thirdPartyApps = [
     {
         "path": "/Applications/Visual Studio Code.app",
-        "args": ["--after", "System Preferences"],
+        "args": ["--after", "System Settings"],
         "forced": True
     },
     {
