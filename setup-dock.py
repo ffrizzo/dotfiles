@@ -25,7 +25,7 @@ import getpass
 appleApps = [
     "/System/Applications/Launchpad.app",
     "/System/Applications/Mission Control.app",
-    "/System/Applications/System Preferences.app",
+    "/System/Applications/System Settings.app",
     "/Applications/Safari.app"
 ]
 
@@ -41,7 +41,7 @@ thirdPartyApps = [
     },
     {
         "path": "/Applications/iTerm.app",
-        "args": ["--after", "System Preferences"],
+        "args": ["--after", "System Settings"],
         "forced": True
     },
     {
