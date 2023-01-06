@@ -16,6 +16,7 @@ brew "arkade"
 brew "ansible"
 brew "awscli"
 brew "bash"
+brew "consul"
 brew "bat"
 brew "dasel"
 brew "dfu-util"
@@ -44,6 +45,7 @@ brew "linkerd"
 brew "mas"
 brew "md5sha1sum"
 brew "mercurial"
+brew "nomad"
 brew "platformio"
 brew "pinentry-mac"
 brew "packer"
@@ -66,7 +68,6 @@ brew "openjdk"
 brew "pyenv"
 brew "pyenv-virtualenv"
 brew "rustup-init"
-brew "sbt"
 
 cask "balenaetcher"
 
@@ -106,7 +107,6 @@ cask "opera-developer"
 cask "tor-browser"
 
 cask "zoom"
-
 cask "grammarly"
 
 mas "Grammarly for Safari", id: 1462114288

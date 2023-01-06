@@ -13,6 +13,8 @@ sh osx-user-defaults.sh
 mkdir -p ~/.nvm
 mkdir -p ~/.pyenv
 
+sudo ln -sf $(brew --prefix bash)/bin/bash /usr/local/bin/bash
+
 echo "\nInstalling Fonts"
 open -a Font\ Book ./fonts/*.ttf
 
