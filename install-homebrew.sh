@@ -10,4 +10,4 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 echo "\nInstaling applications from homebrew"
 brew bundle
 echo "\nCleanup brew formulas"
-brew cleanup
+brew cleanup --prune=all

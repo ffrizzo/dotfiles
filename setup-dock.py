@@ -40,7 +40,7 @@ thirdPartyApps = [
         "forced": True
     },
     {
-        "path": "/Applications/iTerm.app",
+        "path": "/Applications/Warp.app",
         "args": ["--after", "System Settings"],
         "forced": True
     },

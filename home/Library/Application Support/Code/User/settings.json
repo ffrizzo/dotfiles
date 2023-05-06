@@ -1,21 +1,31 @@
 {
     "atomKeymap.promptV3Features": true,
     "cSpell.userWords": [
+        "alloc",
+        "allocs",
         "artifactory",
         "cachix",
         "Causef",
+        "cicd",
+        "cooldown",
+        "datacenter",
         "Debugf",
         "ecomdev",
+        "goarch",
         "golangci",
         "gomock",
         "gorelease",
+        "gosec",
         "hashicorp",
         "Infof",
         "kubernetes",
         "ldap",
+        "mockgen",
         "Newf",
         "nixos",
         "nixpkgs",
+        "nolint",
+        "oidc",
         "SUPABASE",
         "twilio",
         "walletconnect",
@@ -26,6 +36,11 @@
         "source.fixAll": true,
         "source.fixAll.eslint": true
     },
+    "editor.accessibilitySupport": "off",
+    "editor.guides.bracketPairs": true,
+    "eslint.validate": [
+        "javascript"
+    ],
     "extensions.ignoreRecommendations": false,
     "explorer.confirmDragAndDrop": false,
     "files.autoSave": "onFocusChange",
@@ -41,6 +56,7 @@
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
+    "git.openRepositoryInParentFolders": "always",
     "gitlens.advanced.fileHistoryFollowsRenames": true,
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
@@ -85,7 +101,8 @@
     "[python]": {
         "editor.tabSize": 4,
         "editor.insertSpaces": true,
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true
     },
     "platformio-ide.disablePIOHomeStartup": true,
     "redhat.telemetry.enabled": false,
@@ -102,6 +119,8 @@
     "rust-analyzer.inlayHints.typeHints.enable": false,
     "rust-analyzer.inlayHints.chainingHints.enable": false,
     "terraform.languageServer.enable": true,
+    "terminal.external.osxExec": "warp.app",
+    "terminal.explorerKind": "external",
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.lineHeight": 1.3,
     "workbench.activityBar.visible": true,
