@@ -1,40 +1,45 @@
 #!/bin/zsh
 echo "\nInstalling vscode plugins..."
 
-code --install-extension 2gua.rainbow-brackets
-code --install-extension aaron-bond.better-comments
-code --install-extension adamhartford.vscode-base64
-code --install-extension bungcip.better-toml
-code --install-extension DavidAnson.vscode-markdownlint
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension donjayamanne.githistory
-code --install-extension eamodio.gitlens
-code --install-extension golang.go
-code --install-extension hashicorp.hcl
-code --install-extension hashicorp.terraform
-code --install-extension mikestead.dotenv
-code --install-extension ms-azuretools.vscode-docker
-code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
-code --install-extension ms-python.python
-code --install-extension ms-python.vscode-pylance
-code --install-extension ms-vscode-remote.remote-containers
-code --install-extension ms-vscode-remote.remote-ssh
-code --install-extension ms-vscode-remote.remote-ssh-edit
-code --install-extension ms-vscode-remote.remote-wsl
-code --install-extension ms-vscode-remote.vscode-remote-extensionpack
-code --install-extension ms-vscode.atom-keybindings
-code --install-extension ms-vscode.cpptools
-code --install-extension ms-vscode.makefile-tools
-code --install-extension ms-vscode.remote-explorer
-code --install-extension ms-vscode.remote-server
-code --install-extension platformio.platformio-ide
-code --install-extension redhat.vscode-commons
-code --install-extension redhat.vscode-yaml
-code --install-extension rust-lang.rust-analyzer
-code --install-extension streetsidesoftware.code-spell-checker
-code --install-extension usernamehw.errorlens
-code --install-extension vscode-icons-team.vscode-icons
-code --install-extension waderyan.gitblame
-code --install-extension wholroyd.jinja
-code --install-extension ziglang.vscode-zig
-code --install-extension zxh404.vscode-proto3
+code --log error --install-extension aaron-bond.better-comments
+code --log error --install-extension adamhartford.vscode-base64
+code --log error --install-extension bungcip.better-toml
+code --log error --install-extension DavidAnson.vscode-markdownlint
+code --log error --install-extension dbaeumer.vscode-eslint
+code --log error --install-extension donjayamanne.githistory
+code --log error --install-extension eamodio.gitlens
+code --log error --install-extension golang.go
+code --log error --install-extension hashicorp.hcl
+code --log error --install-extension hashicorp.terraform
+code --log error --install-extension mikestead.dotenv
+code --log error --install-extension ms-azuretools.vscode-docker
+code --log error --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+code --log error --install-extension ms-python.isort
+code --log error --install-extension ms-python.python
+code --log error --install-extension ms-python.vscode-pylance
+code --log error --install-extension ms-toolsai.jupyter
+code --log error --install-extension ms-toolsai.jupyter-keymap
+code --log error --install-extension ms-toolsai.jupyter-renderers
+code --log error --install-extension ms-toolsai.vscode-jupyter-cell-tags
+code --log error --install-extension ms-toolsai.vscode-jupyter-slideshow
+code --log error --install-extension ms-vscode-remote.remote-containers
+code --log error --install-extension ms-vscode-remote.remote-ssh
+code --log error --install-extension ms-vscode-remote.remote-ssh-edit
+code --log error --install-extension ms-vscode-remote.remote-wsl
+code --log error --install-extension ms-vscode-remote.vscode-remote-extensionpack
+code --log error --install-extension ms-vscode.atom-keybindings
+code --log error --install-extension ms-vscode.cpptools
+code --log error --install-extension ms-vscode.makefile-tools
+code --log error --install-extension ms-vscode.remote-explorer
+code --log error --install-extension ms-vscode.remote-server
+code --log error --install-extension platformio.platformio-ide
+code --log error --install-extension redhat.vscode-commons
+code --log error --install-extension redhat.vscode-yaml
+code --log error --install-extension rust-lang.rust-analyzer
+code --log error --install-extension streetsidesoftware.code-spell-checker
+code --log error --install-extension usernamehw.errorlens
+code --log error --install-extension vscode-icons-team.vscode-icons
+code --log error --install-extension waderyan.gitblame
+code --log error --install-extension wholroyd.jinja
+code --log error --install-extension ziglang.vscode-zig
+code --log error --install-extension zxh404.vscode-proto3
