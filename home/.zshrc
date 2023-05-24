@@ -21,10 +21,10 @@ ZSH_DOTENV_PROMPT=Always
 plugins=(
   aliases
   ansible
+  asdf
   aws
   branch
   brew
-  celery
   cp
   docker
   docker-compose
@@ -45,7 +45,6 @@ plugins=(
   minikube
   node
   npm
-  nvm
   macos
   pip
   pipenv
@@ -65,37 +64,12 @@ plugins=(
   # zsh-syntax-highlighting
 )
 
-ZSH_ALIAS_FINDER_AUTOMATIC=true
-
 source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/terraform terraform
-
-# Terraform version
-load-tfswitch() {
-  local tfswitchrc_path=".tfswitchrc"
-
-  if [ -f "$tfswitchrc_path" ]; then
-    tfswitch -b $HOME/bin/terraform
-  fi
-}
-add-zsh-hook chpwd load-tfswitch
-load-tfswitch
-
-# Terragrunt version
-load-tgswitch() {
-  local tgswitchrc_path=".tgswitchrc"
-
-  if [ -f "$tgswitchrc_path" ]; then
-    tgswitch -b $HOME/bin/terragrunt
-  fi
-}
-add-zsh-hook chpwd load-tgswitch
-load-tgswitch
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

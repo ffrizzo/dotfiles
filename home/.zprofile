@@ -5,10 +5,6 @@ export EDITOR='code'
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
-
-export NVM_DIR=$HOME/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
 eval "$(jump shell)"
 
 export GO111MODULE=on

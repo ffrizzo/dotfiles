@@ -10,7 +10,6 @@ sh install-vscode-plugins.sh
 sudo sh osx-system-defaults.sh
 sh osx-user-defaults.sh
 
-mkdir -p ~/.nvm
 mkdir -p ~/.pyenv
 
 sudo ln -sf $(brew --prefix bash)/bin/bash /usr/local/bin/bash
