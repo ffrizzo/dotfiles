@@ -1,8 +1,6 @@
 [user]
 	name = Fabiano Frizzo
 	email = ffrizzo@gmail.com
-[credential]
-	helper = osxkeychain
 [color]
 	diff = auto
 	status = auto
@@ -15,10 +13,6 @@
 	editor = code -n -w
 [push]
 	default = current
-[commit]
-	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
-	template = ~/.stCommitMsg
 [diff]
 	renames = copies
 [difftool "sourcetree"]
