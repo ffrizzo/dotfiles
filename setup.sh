@@ -6,6 +6,7 @@ sh install-cli-tools.sh
 sh install-homebrew.sh
 sh install-tools.sh
 sh install-vscode-plugins.sh
+sh install-broswer-extensions.sh
 
 sudo sh osx-system-defaults.sh
 sh osx-user-defaults.sh
