@@ -44,3 +44,7 @@ rm -rf dotfiles-confidential
 - `dot_*` — dotfiles, applied to `$HOME` (e.g. `dot_zshrc` → `~/.zshrc`).
 - `Library/` — app preferences/settings applied under `~/Library` (VS Code, iTerm2, Warp).
 - `fonts/` — bundled fonts, installed by `.chezmoiscripts/run_once_after_23-fonts.sh.tmpl`.
+
+## Maintenance
+
+After editing `Brewfile`, run `brew bundle check --verbose --no-upgrade --file=Brewfile` locally to catch renamed/removed formulas and casks before committing — CI only checks that the file parses, not that every entry still resolves (see the comment in `run_onchange_before_10-packages.sh.tmpl` for why).
