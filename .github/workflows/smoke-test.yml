@@ -1,0 +1,24 @@
+name: Smoke Test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  chezmoi-apply:
+    runs-on: macos-latest
+    env:
+      CI: "true"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install chezmoi
+        run: |
+          sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: chezmoi diff
+        run: chezmoi diff --source="$GITHUB_WORKSPACE"
+
+      - name: chezmoi apply
+        run: chezmoi apply --source="$GITHUB_WORKSPACE" --force

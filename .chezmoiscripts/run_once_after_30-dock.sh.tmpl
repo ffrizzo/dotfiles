@@ -1,0 +1,41 @@
+#!/bin/bash
+{{ if ne .chezmoi.os "darwin" }}exit 0{{ end }}
+set -euo pipefail
+
+if ! command -v dockutil >/dev/null 2>&1; then
+  echo "dockutil not found, skipping Dock setup"
+  exit 0
+fi
+
+echo "Configuring Dock..."
+dockutil --remove all --no-restart
+
+dockutil --add "/System/Applications/Launchpad.app" --no-restart
+dockutil --add "/System/Applications/Mission Control.app" --no-restart
+dockutil --add "/System/Applications/System Settings.app" --no-restart
+dockutil --add "/Applications/Safari.app" --no-restart
+
+for app in \
+  "/Applications/Warp.app" \
+  "/Applications/Cursor.app" \
+  "/Applications/Visual Studio Code.app" \
+  "/Applications/Claude.app" \
+  "/Applications/Brave Browser.app" \
+  "/Applications/Google Chrome Dev.app" \
+  "/Applications/Firefox Developer Edition.app" \
+  "/Applications/Slack.app" \
+  "/Applications/Spotify.app" \
+  "/Applications/Microsoft Outlook.app"; do
+  if [ -d "$app" ]; then
+    dockutil --add "$app" --no-restart
+  fi
+done
+
+if [ -d "$HOME/Documents" ]; then
+  dockutil --add "$HOME/Documents" --view grid --display stack --sort name --no-restart
+fi
+if [ -d "$HOME/Downloads" ]; then
+  dockutil --add "$HOME/Downloads" --view grid --display stack --sort dateadded --no-restart
+fi
+
+killall Dock || true

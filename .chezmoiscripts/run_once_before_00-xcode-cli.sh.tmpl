@@ -1,0 +1,19 @@
+#!/bin/bash
+{{ if ne .chezmoi.os "darwin" }}exit 0{{ end }}
+set -euo pipefail
+
+if [ -n "${CI:-}" ]; then
+  echo "Skipping Xcode CLI tools / Software Update in CI"
+  exit 0
+fi
+
+echo "Installing Xcode Command Line Tools..."
+xcode-select -p >/dev/null 2>&1 || xcode-select --install
+
+echo "Checking for macOS software updates..."
+softwareupdate -ia --verbose
+
+if [ "$(uname -m)" = "arm64" ]; then
+  echo "Installing Rosetta 2..."
+  softwareupdate --install-rosetta --agree-to-license
+fi
