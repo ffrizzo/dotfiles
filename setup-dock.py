@@ -35,27 +35,32 @@ appleApps = [
 # =======================================
 thirdPartyApps = [
     {
-        "path": "/Applications/Visual Studio Code.app",
-        "args": ["--after", "System Settings"],
-        "forced": True
-    },
-    {
         "path": "/Applications/Warp.app",
         "args": ["--after", "System Settings"],
         "forced": True
     },
     {
-        "path": "/Applications/Spotify.app",
+        "path": "/Applications/Cursor.app",
+        "args": ["--after", "Warp"],
+        "forced": True
+    },
+    {
+        "path": "/Applications/Visual Studio Code.app",
+        "args": ["--after", "System Settings"],
+        "forced": True
+    },
+    {
+        "path": "/Applications/Claude.app",
+        "args": ["--after", "System Settings"],
+        "forced": True
+    },
+    {
+        "path": "/Applications/Brave Browser.app",
         "args": ["--after", "Safari"],
         "forced": True
     },
     {
-        "path": "/Applications/Slack.app",
-        "args": ["--after", "Safari"],
-        "forced": True
-    },
-    {
-        "path": "/Applications/Discord.app",
+        "path": "/Applications/Google Chrome Dev.app",
         "args": ["--after", "Safari"],
         "forced": True
     },
@@ -65,12 +70,17 @@ thirdPartyApps = [
         "forced": True
     },
     {
-        "path": "/Applications/Google Chrome Canary.app",
+        "path": "/Applications/Slack.app",
         "args": ["--after", "Safari"],
         "forced": True
     },
     {
-        "path": "/Applications/Brave Browser.app",
+        "path": "/Applications/Spotify.app",
+        "args": ["--after", "Safari"],
+        "forced": True
+    },
+    {
+        "path": "/Applications/Microsoft Outlook.app",
         "args": ["--after", "Safari"],
         "forced": True
     }

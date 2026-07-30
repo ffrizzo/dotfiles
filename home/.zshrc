@@ -9,7 +9,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="agnoster"
-# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ZSH_DOTENV_PROMPT=Always
 
@@ -21,7 +20,6 @@ ZSH_DOTENV_PROMPT=Always
 plugins=(
   aliases
   ansible
-  asdf
   aws
   branch
   brew
@@ -37,7 +35,6 @@ plugins=(
   golang
   helm
   history
-  httpie
   iterm2
   jira
   kops
@@ -55,7 +52,6 @@ plugins=(
   rust
   terraform
   vagrant
-  vault
   virtualenv
   vscode
   yarn
@@ -66,12 +62,14 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 autoload -U +X bashcompinit && bashcompinit
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 export GPG_TTY=$(tty)
+
+eval "$(mise activate zsh)"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/ffrizzo/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
