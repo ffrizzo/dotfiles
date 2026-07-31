@@ -25,9 +25,17 @@ jobs:
 
       - name: Verify zsh startup (zinit plugin loading)
         run: |
-          output=$(zsh -ic 'exit' 2>&1) || true
+          # Turbo mode defers plugin loading until after the first prompt via a
+          # precmd hook - `-c exit` can return before all ~39 snippets finish
+          # fetching, so give it real time and confirm the *last* plugin in the
+          # list actually loaded, not just however many happened to finish first.
+          output=$(zsh -ic 'sleep 20; exit' 2>&1) || true
           echo "$output"
           if echo "$output" | grep -qiE "fatal:|error|not found|404"; then
             echo "zsh startup produced errors - likely a bad zinit snippet/plugin name"
+            exit 1
+          fi
+          if ! echo "$output" | grep -q "OMZP::yarn"; then
+            echo "zsh startup never reached the last plugin in the list (OMZP::yarn) - turbo-mode loading didn't complete in time"
             exit 1
           fi
