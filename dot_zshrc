@@ -45,13 +45,14 @@ zinit wait lucid for \
     OMZP::postgres \
     OMZP::pyenv \
     OMZP::python \
-    OMZP::redis-cli \
     OMZP::rust \
     OMZP::terraform \
     OMZP::vagrant \
     OMZP::virtualenv \
     OMZP::vscode \
-    OMZP::yarn
+    OMZP::yarn \
+    as"completion" \
+    OMZP::redis-cli/_redis-cli
 
 autoload -U +X bashcompinit && bashcompinit
 
