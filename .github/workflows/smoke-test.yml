@@ -29,7 +29,12 @@ jobs:
           # precmd hook - `-c exit` can return before all ~39 snippets finish
           # fetching, so give it real time and confirm the *last* plugin in the
           # list actually loaded, not just however many happened to finish first.
-          output=$(zsh -ic 'sleep 20; exit' 2>&1) || true
+          # This is a cold-cache, no-parallelism, one-file-per-snippet fetch of
+          # ~39 files from GitHub on a fresh runner - 20s wasn't close to enough
+          # (the 2nd snippet hadn't even started after 25s), so this is generous
+          # on purpose. This cost is one-time (first shell start only); it's not
+          # representative of the actual startup-time win this migration is for.
+          output=$(zsh -ic 'sleep 120; exit' 2>&1) || true
           echo "$output"
           if echo "$output" | grep -qiE "fatal:|error|not found|404"; then
             echo "zsh startup produced errors - likely a bad zinit snippet/plugin name"
