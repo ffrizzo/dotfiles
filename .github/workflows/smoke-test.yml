@@ -22,3 +22,12 @@ jobs:
 
       - name: chezmoi apply
         run: chezmoi apply --source="$GITHUB_WORKSPACE" --force
+
+      - name: Verify zsh startup (zinit plugin loading)
+        run: |
+          output=$(zsh -ic 'exit' 2>&1) || true
+          echo "$output"
+          if echo "$output" | grep -qiE "fatal:|error|not found|404"; then
+            echo "zsh startup produced errors - likely a bad zinit snippet/plugin name"
+            exit 1
+          fi

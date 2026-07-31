@@ -1,71 +1,60 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="agnoster"
-
 ZSH_DOTENV_PROMPT=Always
 
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  aliases
-  ansible
-  aws
-  branch
-  brew
-  cp
-  docker
-  docker-compose
-  dotenv
-  gcloud
-  gem
-  git
-  git-extras
-  git-flow
-  golang
-  helm
-  history
-  iterm2
-  jira
-  kops
-  kubectl
-  minikube
-  node
-  npm
-  macos
-  pip
-  pipenv
-  postgres
-  pyenv
-  python
-  redis-cli
-  rust
-  terraform
-  vagrant
-  virtualenv
-  vscode
-  yarn
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+source "${ZINIT_HOME}/zinit.zsh"
 
-  # zsh-autosuggestions
-  # zsh-syntax-highlighting
-)
+zinit wait lucid for \
+    atinit"zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
+    atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions \
+    blockf atpull'zinit creinstall -q .' \
+    zsh-users/zsh-completions
 
-source $ZSH/oh-my-zsh.sh
+zinit wait lucid for \
+    OMZP::aliases \
+    OMZP::ansible \
+    OMZP::aws \
+    OMZP::branch \
+    OMZP::brew \
+    OMZP::cp \
+    OMZP::docker \
+    OMZP::docker-compose \
+    OMZP::dotenv \
+    OMZP::gcloud \
+    OMZP::gem \
+    OMZP::git \
+    OMZP::git-extras \
+    OMZP::git-flow \
+    OMZP::golang \
+    OMZP::helm \
+    OMZP::history \
+    OMZP::iterm2 \
+    OMZP::jira \
+    OMZP::kops \
+    OMZP::kubectl \
+    OMZP::minikube \
+    OMZP::node \
+    OMZP::npm \
+    OMZP::macos \
+    OMZP::pip \
+    OMZP::pipenv \
+    OMZP::postgres \
+    OMZP::pyenv \
+    OMZP::python \
+    OMZP::redis-cli \
+    OMZP::rust \
+    OMZP::terraform \
+    OMZP::vagrant \
+    OMZP::virtualenv \
+    OMZP::vscode \
+    OMZP::yarn
 
 autoload -U +X bashcompinit && bashcompinit
 
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export GPG_TTY=$(tty)
 
 eval "$(mise activate zsh)"

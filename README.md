@@ -8,7 +8,7 @@ Managed with [chezmoi](https://www.chezmoi.io). Covers Homebrew packages, shell 
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply ffrizzo/dotfiles
 ```
 
-This installs chezmoi, clones this repo, and applies everything: Xcode CLI tools, Homebrew plus every package in `Brewfile`, oh-my-zsh, macOS system/user defaults, fonts, browser extension stubs, Dock layout, and VS Code/Cursor extensions. See `.chezmoiscripts/` for exactly what runs and in what order.
+This installs chezmoi, clones this repo, and applies everything: Xcode CLI tools, Homebrew plus every package in `Brewfile`, zinit (zsh plugin manager), macOS system/user defaults, fonts, browser extension stubs, Dock layout, and VS Code/Cursor extensions. See `.chezmoiscripts/` for exactly what runs and in what order.
 
 A couple of things `chezmoi apply` can't do for you, run once afterward:
 - `rustup default stable` — finishes the Rust toolchain setup.
