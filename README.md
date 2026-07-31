@@ -2,11 +2,7 @@
 
 Managed with [chezmoi](https://www.chezmoi.io). Covers Homebrew packages, shell config, macOS defaults, Dock, and editor extensions (VS Code + Cursor).
 
-This is a two-repo setup. This repo covers everything public. A second, private repo — `dotfiles-confidential` — covers 1Password, SSH, and work-specific tools, and is run separately (see below).
-
 ## Installation
-
-### 1. This repo
 
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply ffrizzo/dotfiles
@@ -17,17 +13,6 @@ This installs chezmoi, clones this repo, and applies everything: Xcode CLI tools
 A couple of things `chezmoi apply` can't do for you, run once afterward:
 - `rustup default stable` — finishes the Rust toolchain setup.
 - `mise install` — installs the pinned runtime versions (e.g. Terraform) that `mise` manages.
-
-### 2. dotfiles-confidential
-
-```bash
-git clone git@github.com:ffrizzo/dotfiles-confidential.git
-cd dotfiles-confidential
-chmod +x *.sh
-sh setup.sh
-cd ..
-rm -rf dotfiles-confidential
-```
 
 ## Day-to-day usage
 
