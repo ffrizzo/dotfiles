@@ -26,7 +26,7 @@ A couple of things `chezmoi apply` can't do for you, run once afterward:
 
 - `Brewfile` — Homebrew formulae, casks, and VS Code extensions, installed via `brew bundle`.
 - `.chezmoiscripts/` — install/setup scripts, run in order by `chezmoi apply` (numeric prefix = order; `run_once_` = once ever per machine; `run_onchange_` = re-runs when its own rendered content changes, e.g. the Brewfile install script re-runs whenever `Brewfile` changes).
-- `dot_*` — dotfiles, applied to `$HOME` (e.g. `dot_zshrc` → `~/.zshrc`).
+- `dot_*` — dotfiles, applied to `$HOME` (e.g. `dot_zshrc` → `~/.zshrc`; `dot_warp/settings.toml` → `~/.warp/settings.toml` — Warp's actual theme/font/tab config, not to be confused with `Library/Preferences/dev.warp.Warp-Stable.plist` below, which doesn't hold much of substance).
 - `Library/` — app preferences/settings applied under `~/Library` (VS Code, iTerm2, Warp).
 - `fonts/` — bundled fonts, installed by `.chezmoiscripts/run_once_after_23-fonts.sh.tmpl`.
 
