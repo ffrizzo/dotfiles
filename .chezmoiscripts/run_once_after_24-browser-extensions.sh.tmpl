@@ -1,0 +1,19 @@
+#!/bin/bash
+{{ if ne .chezmoi.os "darwin" }}exit 0{{ end }}
+set -euo pipefail
+
+echo "Installing Brave extensions..."
+BRAVE_EXTENSIONS="$HOME/Library/Application Support/BraveSoftware/Brave-Browser/External Extensions"
+mkdir -p "$BRAVE_EXTENSIONS"
+echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' > "$BRAVE_EXTENSIONS/aapbdbdomjkkjkaonfhkkikfgjllcleb.json" # Google Translate
+echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' > "$BRAVE_EXTENSIONS/kbfnbcaeplbcioakkpcpgfkobkghlhen.json" # Grammarly
+echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' > "$BRAVE_EXTENSIONS/idgpnmonknjnojddfkpgkljpfnnfcklj.json" # ModHeader
+echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' > "$BRAVE_EXTENSIONS/bcjindcccaagfpapjjmafapmmgkkhgoa.json" # JSON Formatter
+
+echo "Installing Chrome extensions..."
+CHROME_EXTENSIONS="$HOME/Library/Application Support/Google/Chrome Dev/External Extensions"
+mkdir -p "$CHROME_EXTENSIONS"
+echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' > "$CHROME_EXTENSIONS/aapbdbdomjkkjkaonfhkkikfgjllcleb.json" # Google Translate
+echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' > "$CHROME_EXTENSIONS/kbfnbcaeplbcioakkpcpgfkobkghlhen.json" # Grammarly
+echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' > "$CHROME_EXTENSIONS/idgpnmonknjnojddfkpgkljpfnnfcklj.json" # ModHeader
+echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' > "$CHROME_EXTENSIONS/bcjindcccaagfpapjjmafapmmgkkhgoa.json" # JSON Formatter

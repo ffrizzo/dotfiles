@@ -1,0 +1,61 @@
+name: Smoke Test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  chezmoi-apply:
+    runs-on: macos-latest
+    env:
+      CI: "true"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install chezmoi
+        run: |
+          sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: chezmoi diff
+        run: chezmoi diff --source="$GITHUB_WORKSPACE"
+
+      - name: chezmoi apply
+        run: chezmoi apply --source="$GITHUB_WORKSPACE" --force
+
+      - name: Verify zsh starts without hard errors
+        run: |
+          # Only checks that sourcing dot_zshrc itself doesn't error - turbo-mode
+          # plugin loading is deferred and its completion depends on genuine
+          # interactive idle-time scheduling that a `-c` command context doesn't
+          # reliably produce (confirmed: it consistently stalls after the very
+          # first deferred plugin regardless of how long you wait), so it's not
+          # something this can reliably wait out. The step below validates plugin
+          # names directly instead.
+          output=$(zsh -ic 'sleep 5; exit' 2>&1) || true
+          echo "$output"
+          if echo "$output" | grep -qiE "fatal:|command not found|parse error"; then
+            echo "zsh startup produced hard errors"
+            exit 1
+          fi
+
+      - name: "Verify OMZP:: plugin names resolve"
+        run: |
+          plugins=(aliases ansible aws branch brew cp docker docker-compose dotenv gcloud gem git git-extras git-flow golang helm history iterm2 jira kops kubectl minikube node npm macos pip pipenv postgres pyenv python rust terraform vagrant virtualenv vscode yarn)
+          all_ok=0
+          for p in "${plugins[@]}"; do
+            url="https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/$p/$p.plugin.zsh"
+            code=$(curl -s -o /dev/null -w "%{http_code}" "$url")
+            if [ "$code" != "200" ]; then
+              echo "Invalid OMZP:: plugin name: $p (HTTP $code for $url)"
+              all_ok=1
+            fi
+          done
+          # redis-cli is completion-only (no .plugin.zsh, just _redis-cli)
+          redis_url="https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/redis-cli/_redis-cli"
+          redis_code=$(curl -s -o /dev/null -w "%{http_code}" "$redis_url")
+          if [ "$redis_code" != "200" ]; then
+            echo "Invalid OMZP:: completion path: redis-cli/_redis-cli (HTTP $redis_code)"
+            all_ok=1
+          fi
+          exit "$all_ok"

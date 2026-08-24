@@ -1,0 +1,61 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+ZSH_DOTENV_PROMPT=Always
+
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+source "${ZINIT_HOME}/zinit.zsh"
+
+zinit wait lucid for \
+    atinit"zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
+    atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions \
+    blockf atpull'zinit creinstall -q .' \
+    zsh-users/zsh-completions
+
+zinit wait lucid for \
+    OMZP::aliases \
+    OMZP::ansible \
+    OMZP::aws \
+    OMZP::branch \
+    OMZP::brew \
+    OMZP::cp \
+    OMZP::docker \
+    OMZP::docker-compose \
+    OMZP::dotenv \
+    OMZP::gcloud \
+    OMZP::gem \
+    OMZP::git \
+    OMZP::git-extras \
+    OMZP::git-flow \
+    OMZP::golang \
+    OMZP::helm \
+    OMZP::history \
+    OMZP::iterm2 \
+    OMZP::jira \
+    OMZP::kops \
+    OMZP::kubectl \
+    OMZP::minikube \
+    OMZP::node \
+    OMZP::npm \
+    OMZP::macos \
+    OMZP::pip \
+    OMZP::pipenv \
+    OMZP::postgres \
+    OMZP::pyenv \
+    OMZP::python \
+    OMZP::rust \
+    OMZP::terraform \
+    OMZP::vagrant \
+    OMZP::virtualenv \
+    OMZP::vscode \
+    OMZP::yarn \
+    as"completion" \
+    OMZP::redis-cli/_redis-cli
+
+autoload -U +X bashcompinit && bashcompinit
+
+export GPG_TTY=$(tty)
+
+eval "$(mise activate zsh)"

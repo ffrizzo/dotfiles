@@ -1,0 +1,29 @@
+name: Lint
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  shellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Strip chezmoi template guards for linting
+        run: |
+          mkdir -p /tmp/lint
+          for f in .chezmoiscripts/*.tmpl; do
+            base=$(basename "$f" .tmpl)
+            # Force a bash shebang for linting purposes regardless of the
+            # script's real shebang - ShellCheck refuses zsh scripts
+            # outright (SC1071), and this action has no option to force
+            # --shell, so the shebang line itself is what it auto-detects
+            # from.
+            { echo '#!/bin/bash'; tail -n +2 "$f" | sed -E 's/\{\{.*\}\}//g'; } > "/tmp/lint/$base"
+          done
+
+      - name: ShellCheck
+        uses: ludeeus/action-shellcheck@master
+        with:
+          scandir: /tmp/lint

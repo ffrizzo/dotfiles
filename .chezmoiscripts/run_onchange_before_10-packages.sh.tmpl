@@ -1,0 +1,26 @@
+#!/bin/bash
+{{ if ne .chezmoi.os "darwin" }}exit 0{{ end }}
+# Brewfile hash: {{ include "Brewfile" | sha256sum }}
+set -euo pipefail
+
+if ! command -v brew >/dev/null 2>&1; then
+  eval "$(/opt/homebrew/bin/brew shellenv 2>/dev/null || /usr/local/bin/brew shellenv)"
+fi
+
+if [ -n "${CI:-}" ]; then
+  # Only checks that the Brewfile's bundle DSL parses; it deliberately does
+  # NOT try to resolve every formula/cask name (third-party-tap entries like
+  # svu/goreleaser fail that check unless explicitly `brew trust`-ed, which
+  # would make this a trust-model test instead of a Brewfile syntax test).
+  # Run `brew bundle check --verbose` locally after editing the Brewfile to
+  # catch renamed/removed formulas - see README.
+  echo "CI: validating Brewfile syntax without installing everything in it"
+  brew bundle list --file="{{ .chezmoi.sourceDir }}/Brewfile" >/dev/null
+  exit 0
+fi
+
+echo "Installing Homebrew packages..."
+brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"
+
+echo "Cleaning up old formulae..."
+brew cleanup --prune=all

@@ -12,6 +12,7 @@ export GO111MODULE=on
 export GOPATH=$HOME/workspaces/go/
 export PATH=$PATH:$GOPATH/bin
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 
