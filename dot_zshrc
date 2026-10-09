@@ -32,7 +32,6 @@ zinit wait lucid for \
     OMZP::golang \
     OMZP::helm \
     OMZP::history \
-    OMZP::iterm2 \
     OMZP::jira \
     OMZP::kops \
     OMZP::kubectl \

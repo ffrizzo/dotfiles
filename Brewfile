@@ -83,19 +83,15 @@ cask "the-unarchiver"
 
 # cask "arduino-ide"
 cask "easyeda"
-cask "autodesk-fusion"
 cask "prusaslicer"
 cask "openscad"
 cask "freecad"
 
-cask "diffmerge"
 # cask "docker"
-cask "rancher"
 cask "goreleaser"
 cask "visual-studio-code"
 cask "cursor"
 
-cask "iterm2"
 cask "warp"
 cask "sourcetree"
 
@@ -104,8 +100,6 @@ cask "slack"
 
 cask "brave-browser"
 cask "firefox@developer-edition"
-cask "opera@developer"
-cask "tor-browser"
 
 cask "raspberry-pi-imager"
 cask "rectangle"
