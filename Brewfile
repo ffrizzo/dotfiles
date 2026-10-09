@@ -92,6 +92,7 @@ cask "goreleaser"
 cask "visual-studio-code"
 cask "cursor"
 
+cask "rancher"
 cask "warp"
 cask "sourcetree"
 
@@ -100,8 +101,8 @@ cask "slack"
 
 cask "brave-browser"
 cask "firefox@developer-edition"
+cask "tor-browser"
 
-cask "raspberry-pi-imager"
 cask "rectangle"
 
 cask "zoom"
