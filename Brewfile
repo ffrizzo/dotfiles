@@ -104,7 +104,6 @@ cask "slack"
 
 cask "brave-browser"
 cask "firefox@developer-edition"
-cask "google-chrome@dev"
 cask "opera@developer"
 cask "tor-browser"
 

@@ -9,11 +9,40 @@ echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}
 echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' > "$BRAVE_EXTENSIONS/kbfnbcaeplbcioakkpcpgfkobkghlhen.json" # Grammarly
 echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' > "$BRAVE_EXTENSIONS/idgpnmonknjnojddfkpgkljpfnnfcklj.json" # ModHeader
 echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' > "$BRAVE_EXTENSIONS/bcjindcccaagfpapjjmafapmmgkkhgoa.json" # JSON Formatter
+echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' > "$BRAVE_EXTENSIONS/aeblfdkhhhdcdjpifhhbdiojplfjncoa.json" # 1Password
+echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' > "$BRAVE_EXTENSIONS/glnpjglilkicbckjpbgcfkogebgllemb.json" # Okta Browser Plugin
 
-echo "Installing Chrome extensions..."
-CHROME_EXTENSIONS="$HOME/Library/Application Support/Google/Chrome Dev/External Extensions"
-mkdir -p "$CHROME_EXTENSIONS"
-echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' > "$CHROME_EXTENSIONS/aapbdbdomjkkjkaonfhkkikfgjllcleb.json" # Google Translate
-echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' > "$CHROME_EXTENSIONS/kbfnbcaeplbcioakkpcpgfkobkghlhen.json" # Grammarly
-echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' > "$CHROME_EXTENSIONS/idgpnmonknjnojddfkpgkljpfnnfcklj.json" # ModHeader
-echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' > "$CHROME_EXTENSIONS/bcjindcccaagfpapjjmafapmmgkkhgoa.json" # JSON Formatter
+# Firefox has no External Extensions dir; extensions are installed via an
+# enterprise policy file inside the app bundle (needs sudo, and is wiped when
+# the cask upgrades Firefox - clear chezmoi's scriptState to re-run).
+FIREFOX_APP="/Applications/Firefox Developer Edition.app"
+if [ -d "$FIREFOX_APP" ]; then
+  echo "Installing Firefox extensions (requires sudo)..."
+  FIREFOX_DIST="$FIREFOX_APP/Contents/Resources/distribution"
+  AMO="https://addons.mozilla.org/firefox/downloads/latest"
+  sudo mkdir -p "$FIREFOX_DIST"
+  sudo tee "$FIREFOX_DIST/policies.json" > /dev/null <<EOF
+{
+  "policies": {
+    "ExtensionSettings": {
+      "87677a2c52b84ad3a151a4a72f5bd3c4@jetpack": {
+        "installation_mode": "normal_installed",
+        "install_url": "$AMO/grammarly-1/latest.xpi"
+      },
+      "jid0-oEwF5ZcskGhjFv4Kk4lYc@jetpack": {
+        "installation_mode": "normal_installed",
+        "install_url": "$AMO/modify-header-value/latest.xpi"
+      },
+      "{d634138d-c276-4fc8-924b-40a0ea21d284}": {
+        "installation_mode": "normal_installed",
+        "install_url": "$AMO/1password-x-password-manager/latest.xpi"
+      },
+      "plugin@okta.com": {
+        "installation_mode": "normal_installed",
+        "install_url": "$AMO/okta-browser-plugin/latest.xpi"
+      }
+    }
+  }
+}
+EOF
+fi
