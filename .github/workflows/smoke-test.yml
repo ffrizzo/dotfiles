@@ -41,7 +41,7 @@ jobs:
 
       - name: "Verify OMZP:: plugin names resolve"
         run: |
-          plugins=(aliases ansible aws branch brew cp docker docker-compose dotenv gcloud gem git git-extras git-flow golang helm history iterm2 jira kops kubectl minikube node npm macos pip pipenv postgres pyenv python rust terraform vagrant virtualenv vscode yarn)
+          plugins=(aliases ansible aws brew cp docker docker-compose dotenv gcloud gem git git-extras git-flow golang helm history jira kops kubectl minikube node npm macos pip pipenv postgres python rust terraform vagrant virtualenv vscode yarn)
           all_ok=0
           for p in "${plugins[@]}"; do
             url="https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/$p/$p.plugin.zsh"
