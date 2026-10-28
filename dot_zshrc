@@ -6,11 +6,10 @@ ZSH_DOTENV_PROMPT=Always
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
+# Warp owns the prompt and input editor, and mise handles versions.
+# Skip syntax highlighting, autosuggestions, branch, iterm2, and pyenv.
 zinit wait lucid for \
     atinit"zicompinit; zicdreplay" \
-    zdharma-continuum/fast-syntax-highlighting \
-    atload"!_zsh_autosuggest_start" \
-    zsh-users/zsh-autosuggestions \
     blockf atpull'zinit creinstall -q .' \
     zsh-users/zsh-completions
 
@@ -18,7 +17,6 @@ zinit wait lucid for \
     OMZP::aliases \
     OMZP::ansible \
     OMZP::aws \
-    OMZP::branch \
     OMZP::brew \
     OMZP::cp \
     OMZP::docker \
@@ -32,7 +30,6 @@ zinit wait lucid for \
     OMZP::golang \
     OMZP::helm \
     OMZP::history \
-    OMZP::iterm2 \
     OMZP::jira \
     OMZP::kops \
     OMZP::kubectl \
@@ -43,7 +40,6 @@ zinit wait lucid for \
     OMZP::pip \
     OMZP::pipenv \
     OMZP::postgres \
-    OMZP::pyenv \
     OMZP::python \
     OMZP::rust \
     OMZP::terraform \
