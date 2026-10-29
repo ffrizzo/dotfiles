@@ -11,8 +11,10 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply ffrizzo/dotfiles
 This installs chezmoi, clones this repo, and applies everything: Xcode CLI tools, Homebrew plus every package in `Brewfile`, zinit (zsh plugin manager), macOS system/user defaults, fonts, browser extension stubs, Dock layout, and VS Code/Cursor extensions. See `.chezmoiscripts/` for exactly what runs and in what order.
 
 A couple of things `chezmoi apply` can't do for you, run once afterward:
+
+
 - `rustup default stable` — finishes the Rust toolchain setup.
-- `mise install` — installs the pinned runtime versions (e.g. Terraform) that `mise` manages.
+- `mise install` — installs the Terraform versions pinned in `dot_config/mise/config.toml`
 
 ## Day-to-day usage
 
@@ -25,9 +27,9 @@ A couple of things `chezmoi apply` can't do for you, run once afterward:
 ## Structure
 
 - `Brewfile` — Homebrew formulae, casks, and VS Code extensions, installed via `brew bundle`.
-- `.chezmoiscripts/` — install/setup scripts, run in order by `chezmoi apply` (numeric prefix = order; `run_once_` = once ever per machine; `run_onchange_` = re-runs when its own rendered content changes, e.g. the Brewfile install script re-runs whenever `Brewfile` changes).
-- `dot_*` — dotfiles, applied to `$HOME` (e.g. `dot_zshrc` → `~/.zshrc`; `dot_warp/settings.toml` → `~/.warp/settings.toml` — Warp's actual theme/font/tab config, not to be confused with `Library/Preferences/dev.warp.Warp-Stable.plist` below, which doesn't hold much of substance).
-- `Library/` — app preferences/settings applied under `~/Library` (VS Code, iTerm2, Warp).
+- `.chezmoiscripts/` — install/setup scripts, run in order by `chezmoi apply` (numeric prefix = order; `run_once_` = once ever per machine; `run_onchange_` = re-runs when its own rendered content changes, e.g. the Brewfile install and Cursor extension scripts re-run whenever `Brewfile` changes). Dock layout and macOS defaults are `run_once_`, so they only apply on the first run.
+- `dot_*` — dotfiles, applied to `$HOME` (e.g. `dot_zshrc` → `~/.zshrc`; `dot_config/mise/config.toml` → `~/.config/mise/config.toml`; `dot_warp/settings.toml` → `~/.warp/settings.toml`).
+- `Library/` — editor settings applied under `~/Library` (VS Code and Cursor). Warp's preference plist and iTerm2 are unmanaged.
 - `fonts/` — bundled fonts, installed by `.chezmoiscripts/run_once_after_23-fonts.sh.tmpl`.
 
 ## Maintenance

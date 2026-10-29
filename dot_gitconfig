@@ -19,7 +19,18 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 [mergetool "sourcetree"]
 	trustExitCode = true
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 [pull]
 	rebase = true
 [include]
 	path = 	~/.gitconfig-confidential
+[commit]
+	template = ~/.stCommitMsg
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential

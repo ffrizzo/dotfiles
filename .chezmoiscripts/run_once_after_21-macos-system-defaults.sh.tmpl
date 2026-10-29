@@ -12,7 +12,7 @@ echo "Setting macOS system defaults..."
 IS_LAPTOP=$(/usr/sbin/system_profiler SPHardwareDataType | grep "Model Identifier" | grep "Book" || true)
 if [ -n "$IS_LAPTOP" ]; then
   sudo pmset -b sleep 20 disksleep 15 displaysleep 10 halfdim 1
-  sudo pmset -c sleep 0 disksleep 0 displaysleep 30 halfdim 1
+  sudo pmset -c sleep 0 disksleep 0 displaysleep 120 halfdim 1
 
   # Menu bar: show remaining battery time (on pre-10.8); hide percentage
   defaults write com.apple.menuextra.battery ShowPercent -string "YES"
