@@ -1,0 +1,3 @@
+# First version is the default when a directory does not pin one.
+[tools]
+terraform = ["1.9.5"]

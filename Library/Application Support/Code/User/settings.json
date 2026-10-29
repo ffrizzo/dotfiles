@@ -1,131 +1,162 @@
 {
-    "atomKeymap.promptV3Features": true,
-    "cSpell.userWords": [
-        "alloc",
-        "allocs",
-        "artifactory",
-        "cachix",
-        "Causef",
-        "cicd",
-        "cooldown",
-        "datacenter",
-        "Debugf",
-        "ecomdev",
-        "goarch",
-        "golangci",
-        "gomock",
-        "gorelease",
-        "gosec",
-        "hashicorp",
-        "Infof",
-        "kubernetes",
-        "ldap",
-        "mockgen",
-        "Newf",
-        "nixos",
-        "nixpkgs",
-        "nolint",
-        "oidc",
-        "SUPABASE",
-        "twilio",
-        "walletconnect",
-        "Warnf"
-    ],
-    "editor.formatOnPaste": true,
+  "atomKeymap.promptV3Features": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": false,
+  "editor.accessibilitySupport": "off",
+  "editor.guides.bracketPairs": true,
+  "editor.snippetSuggestions": "none",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+  },
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  "files.associations": {
+    "Dockerfile*": "dockerfile",
+    "docker-compose*": "dockercompose",
+    "*.tf": "terraform",
+    "*.tfvars": "terraform",
+    "*.nomad": "hcl",
+    "*.pkr.hcl": "hcl",
+    ".env.*": "dotenv",
+  },
+  "explorer.confirmDragAndDrop": false,
+  "git.openRepositoryInParentFolders": "always",
+  "gitlens.keymap": "alternate",
+  "gitlens.advanced.fileHistoryFollowsRenames": true,
+  "gitlens.codeLens.scopes": [
+    "document",
+    "containers"
+  ],
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.blame.highlight.locations": [
+    "gutter",
+    "line",
+    "overview"
+  ],
+  "cSpell.userWords": [
+    "alloc",
+    "allocs",
+    "anadev",
+    "anaprod",
+    "anaqc",
+    "artifactory",
+    "cachix",
+    "Causef",
+    "cicd",
+    "cooldown",
+    "datacenter",
+    "Debugf",
+    "ecomdev",
+    "ecomprod",
+    "ecomqc",
+    "goarch",
+    "golangci",
+    "gomock",
+    "gorelease",
+    "gosec",
+    "hashicorp",
+    "Infof",
+    "infradev",
+    "kubernetes",
+    "ldap",
+    "mockgen",
+    "Newf",
+    "nixos",
+    "nixpkgs",
+    "nolint",
+    "oidc",
+    "SUPABASE",
+    "twilio",
+    "walletconnect",
+    "Warnf",
+  ],
+  "go.useLanguageServer": true,
+  "go.toolsManagement.autoUpdate": true,
+  "gopls": {
+    "usePlaceholders": true,
+  },
+  "[go]": {
+    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-        "source.fixAll": true,
-        "source.fixAll.eslint": true
+      "source.organizeImports": "explicit",
     },
-    "editor.accessibilitySupport": "off",
-    "editor.guides.bracketPairs": true,
-    "eslint.validate": [
-        "javascript"
-    ],
-    "extensions.ignoreRecommendations": false,
-    "explorer.confirmDragAndDrop": false,
-    "files.autoSave": "onFocusChange",
-    "files.associations": {
-        "Dockerfile*": "dockerfile",
-        "docker-compose*": "dockercompose",
-        "*.tf": "terraform",
-        "*.tfvars": "terraform",
-        "*.nomad": "hcl",
-        "*.pkr.hcl": "hcl",
-        ".env.*": "dotenv"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
     },
-    "files.trimTrailingWhitespace": true,
-    "files.trimFinalNewlines": true,
-    "files.insertFinalNewline": true,
-    "git.openRepositoryInParentFolders": "always",
-    "gitlens.advanced.fileHistoryFollowsRenames": true,
-    "gitlens.advanced.messages": {
-        "suppressCommitHasNoPreviousCommitWarning": false,
-        "suppressCommitNotFoundWarning": false,
-        "suppressFileNotUnderSourceControlWarning": false,
-        "suppressGitVersionWarning": false,
-        "suppressLineUncommittedWarning": false,
-        "suppressNoRepositoryWarning": false,
+  },
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "rust-analyzer.inlayHints.bindingModeHints.enable": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+  },
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true,
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true,
+  },
+  "terraform.languageServer.enable": true,
+  "[toml]": {
+    "editor.formatOnSave": false,
+  },
+  "yaml.format.enable": true,
+  "terminal.external.osxExec": "warp.app",
+  "terminal.explorerKind": "external",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.lineHeight": 1.3,
+  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.startupEditor": "newUntitledFile",
+  "vsicons.dontShowNewVersionMessage": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "redhat.telemetry.enabled": false,
+  "docker.extension.enableComposeLanguageServer": false,
+  "makefile.configureOnOpen": true,
+  "zig.zls.enabled": "on",
+  "java.imports.gradle.wrapper.checksums": [
+    {
+      "sha256": "49a7e1341eb2e32f746a60f7069642eba79a66e8fbdeccfe09fab50f3fa808e6",
+      "allowed": true
     },
-    "gitlens.keymap": "alternate",
-    "gitlens.codeLens.scopes": [
-        "document",
-        "containers"
-    ],
-    "gitlens.hovers.currentLine.over": "line",
-    "gitlens.blame.highlight.locations": [
-        "gutter",
-        "line",
-        "overview"
-    ],
-    "go.alternateTools": {
-        "go-langserver": "gopls"
-    },
-    "go.useLanguageServer": true,
-    "go.buildOnSave": "off",
-    "go.vetOnSave": "off",
-    "[go]": {
-        "editor.snippetSuggestions": "none",
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        }
-    },
-    "go.toolsManagement.autoUpdate": true,
-    "gopls": {
-        "usePlaceholders": true,
-    },
-    "python.linting.lintOnSave": true,
-    "python.linting.pylintArgs": [
-        "--load-plugins=pylint_django"
-    ],
-    "[python]": {
-        "editor.tabSize": 4,
-        "editor.insertSpaces": true,
-        "editor.formatOnSave": true,
-        "editor.formatOnType": true
-    },
-    "platformio-ide.disablePIOHomeStartup": true,
-    "redhat.telemetry.enabled": false,
-    "[rust]": {
-        "editor.formatOnSave": true,
-        "editor.insertSpaces": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        },
-        "editor.defaultFormatter": "rust-lang.rust-analyzer"
-    },
-    "rust-analyzer.inlayHints.parameterHints.enable": false,
-    "rust-analyzer.inlayHints.bindingModeHints.enable": false,
-    "rust-analyzer.inlayHints.typeHints.enable": false,
-    "rust-analyzer.inlayHints.chainingHints.enable": false,
-    "terraform.languageServer.enable": true,
-    "terminal.external.osxExec": "warp.app",
-    "terminal.explorerKind": "external",
-    "terminal.integrated.fontFamily": "MesloLGS NF",
-    "terminal.integrated.lineHeight": 1.3,
-    "workbench.activityBar.visible": true,
-    "workbench.colorTheme": "Default Dark+",
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.startupEditor": "newUntitledFile",
-    "vsicons.dontShowNewVersionMessage": true
+    {
+      "sha256": "d8b325cb1c850084b596b9980b84a733f4cd35843128c2cf3cce52372fb34443",
+      "allowed": true
+    }
+  ],
+  "claudeCode.preferredLocation": "panel",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "chat.mcp.discovery.enabled": {
+    "claude-desktop": true
+  },
+  "chat.mcp.gallery.enabled": true,
+  "protobuf.autoDetection.prompted": true,
+  "chat.tools.global.autoApprove": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "chat.viewSessions.orientation": "stacked",
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
+  ],
+  "docker.extension.dockerEngineAvailabilityPrompt": false,
 }

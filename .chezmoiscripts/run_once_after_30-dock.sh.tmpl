@@ -17,17 +17,18 @@ dockutil --remove all --no-restart
 dockutil --add "/System/Applications/Launchpad.app" --no-restart
 dockutil --add "/System/Applications/Mission Control.app" --no-restart
 dockutil --add "/System/Applications/System Settings.app" --no-restart
-dockutil --add "/Applications/Safari.app" --no-restart
 
 for app in \
   "/Applications/Warp.app" \
   "/Applications/Cursor.app" \
   "/Applications/Visual Studio Code.app" \
   "/Applications/Claude.app" \
+  "/Applications/Safari.app" \
   "/Applications/Brave Browser.app" \
   "/Applications/Google Chrome Dev.app" \
   "/Applications/Firefox Developer Edition.app" \
   "/Applications/Slack.app" \
+  "/Applications/Discord.app" \
   "/Applications/Spotify.app" \
   "/Applications/Microsoft Outlook.app"; do
   if [ -d "$app" ]; then
@@ -35,9 +36,6 @@ for app in \
   fi
 done
 
-if [ -d "$HOME/Documents" ]; then
-  dockutil --add "$HOME/Documents" --view grid --display stack --sort name --no-restart
-fi
 if [ -d "$HOME/Downloads" ]; then
   dockutil --add "$HOME/Downloads" --view grid --display stack --sort dateadded --no-restart
 fi
