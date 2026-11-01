@@ -27,7 +27,7 @@ A couple of things `chezmoi apply` can't do for you, run once afterward:
 ## Structure
 
 - `Brewfile` — Homebrew formulae, casks, and VS Code extensions, installed via `brew bundle`.
-- `.chezmoiscripts/` — install/setup scripts, run in order by `chezmoi apply` (numeric prefix = order; `run_once_` = once ever per machine; `run_onchange_` = re-runs when its own rendered content changes, e.g. the Brewfile install and Cursor extension scripts re-run whenever `Brewfile` changes). Dock layout and macOS defaults are `run_once_`, so they only apply on the first run.
+- `.chezmoiscripts/` — install/setup scripts, run in order by `chezmoi apply` (numeric prefix = order; `run_once_` = once ever per machine; `run_onchange_` = re-runs when its own rendered content changes, e.g. the Brewfile install and Cursor extension scripts re-run whenever `Brewfile` changes). macOS defaults and the Dock layout re-run when the macOS version changes.
 - `dot_*` — dotfiles, applied to `$HOME` (e.g. `dot_zshrc` → `~/.zshrc`; `dot_config/mise/config.toml` → `~/.config/mise/config.toml`; `dot_warp/settings.toml` → `~/.warp/settings.toml`).
 - `Library/` — editor settings applied under `~/Library` (VS Code and Cursor). Warp's preference plist and iTerm2 are unmanaged.
 - `fonts/` — bundled fonts, installed by `.chezmoiscripts/run_once_after_23-fonts.sh.tmpl`.
