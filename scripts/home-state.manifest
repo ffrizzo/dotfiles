@@ -1,0 +1,48 @@
+# Home state that chezmoi cannot recreate. Paths are relative to $HOME.
+#
+#   chromium <browser data directory>   profile Bookmarks (+ Bookmarks.bak)
+#   firefox  <directory with profiles.ini>
+#                                       places.sqlite (bookmarks and history)
+#                                       plus bookmarkbackups/
+#   safari   <Bookmarks.plist>
+#   file     <file>
+#   dir      <directory>
+#
+# Lines starting with # are ignored. A missing path is skipped.
+# Quit the browser before restore. macOS only.
+#
+# Reading ~/Library/Safari needs Full Disk Access for the terminal app
+# running the script (System Settings → Privacy & Security → Full Disk Access).
+
+chromium Library/Application Support/BraveSoftware/Brave-Browser
+chromium Library/Application Support/Google/Chrome Dev
+chromium Library/Application Support/Google/Chrome
+chromium Library/Application Support/com.operasoftware.OperaDeveloper
+chromium Library/Application Support/com.operasoftware.Opera
+
+firefox Library/Application Support/Firefox
+firefox Library/Application Support/Firefox Developer Edition
+firefox Library/Application Support/TorBrowser-Data/Browser
+
+safari Library/Safari/Bookmarks.plist
+
+# Other Chromium browsers, uncomment to include them:
+# chromium Library/Application Support/Microsoft Edge
+# chromium Library/Application Support/Vivaldi
+# chromium Library/Application Support/Arc
+# chromium Library/Application Support/Chromium
+
+# Editor settings.json, keybindings, and extensions already come back from
+# chezmoi apply. These are the configs that do not.
+# Login files stay out (.claude.json, Claude config.json): they hold account
+# tokens and a machine id. Sign in again on the new Mac.
+file Library/Application Support/Code/User/mcp.json
+file .cursor/mcp.json
+file .cursor/argv.json
+file .cursor/cli-config.json
+file .claude/settings.json
+file Library/Application Support/Claude/claude_desktop_config.json
+
+# Anything else that only exists under $HOME:
+# file Library/Preferences/com.googlecode.iterm2.plist
+# dir Library/Application Support/iTerm2/DynamicProfiles

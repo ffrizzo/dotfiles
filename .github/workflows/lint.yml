@@ -22,6 +22,7 @@ jobs:
             # from.
             { echo '#!/bin/bash'; tail -n +2 "$f" | sed -E 's/\{\{.*\}\}//g'; } > "/tmp/lint/$base"
           done
+          cp scripts/executable_home-state.sh /tmp/lint/home-state.sh
 
       - name: ShellCheck
         uses: ludeeus/action-shellcheck@master
