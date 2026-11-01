@@ -12,8 +12,3 @@ xcode-select -p >/dev/null 2>&1 || xcode-select --install
 
 echo "Checking for macOS software updates..."
 softwareupdate -ia --verbose
-
-if [ "$(uname -m)" = "arm64" ]; then
-  echo "Installing Rosetta 2..."
-  softwareupdate --install-rosetta --agree-to-license
-fi

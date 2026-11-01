@@ -1,22 +1,23 @@
 #!/bin/bash
 {{ if ne .chezmoi.os "darwin" }}exit 0{{ end }}
 set -euo pipefail
+{{ if eq .chezmoi.os "darwin" }}
+macos_version="{{ $p := splitList "." (output "sw_vers" "-productVersion" | trim) }}{{ index $p 0 }}{{ if ge (len $p) 2 }}.{{ index $p 1 }}{{ end }}"
+{{ end }}
 
 if [ -n "${CI:-}" ]; then
   echo "Skipping macOS system defaults (needs sudo) in CI"
   exit 0
 fi
 
-echo "Setting macOS system defaults..."
+echo "Setting macOS system defaults for ${macos_version}..."
 
 IS_LAPTOP=$(/usr/sbin/system_profiler SPHardwareDataType | grep "Model Identifier" | grep "Book" || true)
 if [ -n "$IS_LAPTOP" ]; then
   sudo pmset -b sleep 20 disksleep 15 displaysleep 10 halfdim 1
   sudo pmset -c sleep 0 disksleep 0 displaysleep 120 halfdim 1
 
-  # Menu bar: show remaining battery time (on pre-10.8); hide percentage
-  defaults write com.apple.menuextra.battery ShowPercent -string "YES"
-  defaults write com.apple.menuextra.battery ShowTime -string "NO"
+  defaults -currentHost write com.apple.controlcenter BatteryShowPercentage -bool true
 else
   sudo pmset sleep 0 disksleep 0 displaysleep 15 halfdim 1
 fi

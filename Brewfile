@@ -1,8 +1,3 @@
-tap "aws/tap"
-tap "golangci/tap"
-tap "iann0036/iamlive"
-tap "warrensbox/tap"
-
 brew "ansible"
 brew "awscli"
 brew "bash"
@@ -71,10 +66,8 @@ cask "the-unarchiver"
 cask "easyeda"
 cask "autodesk-fusion"
 cask "prusaslicer"
-cask "openscad"
 cask "freecad"
 
-cask "diffmerge"
 # cask "docker"
 cask "rancher"
 cask "goreleaser"
@@ -98,7 +91,6 @@ cask "raspberry-pi-imager"
 cask "rectangle"
 
 cask "zoom"
-cask "grammarly"
 
 cask "claude"
 cask "claude-code@latest"
