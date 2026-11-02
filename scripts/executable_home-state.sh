@@ -705,6 +705,18 @@ remove_incoming() {
   done
 }
 
+# mktemp -d on an external volume can fail with "Operation not permitted"
+# even when mkdir in that same folder works. Create the folder directly.
+make_stage() {
+  local parent="$1" name
+  name="$parent/.incoming.$$.$RANDOM"
+  if mkdir "$name" 2>/dev/null; then
+    printf '%s\n' "$name"
+    return 0
+  fi
+  mktemp -d "${TMPDIR:-/tmp}/home-state.incoming.XXXXXX"
+}
+
 commit_stage() {
   local leftover
   rm -rf "$dest/files.new" "$dest/files.previous"
@@ -741,7 +753,7 @@ do_backup() {
   dest_reusable || die "destination is not empty and is not an existing home-state snapshot: $dest"
   for_each_entry guard_entry
   remove_incoming
-  stage=$(mktemp -d "$dest/.incoming.XXXXXX")
+  stage=$(make_stage "$dest") || die "cannot create a staging folder for $dest"
   archive=$stage
   mkdir -p "$archive/files"
   for_each_entry backup_entry
